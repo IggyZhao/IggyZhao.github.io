@@ -10,8 +10,11 @@ function HeroSection() {
         <HeroTextContainer>
           <HeroTextHeader>Hi, I’m Iggy</HeroTextHeader>
           <HeroTextBody>
-            'There are at least two kinds of games; One could be called finite;
-            the other infinite', states James P. Carse. <br /> <br />
+            <HeroQuote>
+              There are at least two kinds of games; One could be called finite;
+              the other infinite.
+              <HeroQuoteCite>&nbsp;&nbsp;&nbsp; - James P. Carse</HeroQuoteCite>
+            </HeroQuote>
             Finite games may offer wealth and status, power and glory, but
             infinite games offer something far more subtle and far grander.{" "}
             <br /> <br /> I am committed to being an infinite game player and a
@@ -50,64 +53,155 @@ export default HeroSection;
 
 const HeroSectionContainer = styled.div`
   width: 100%;
-  /* top: 80px; */
-  /* position: relative; */
   display: grid;
-  /* align-items: center; */
   justify-content: center;
-  /* background-color: green; */
 `;
 
 const HeroSectionBody = styled.div`
-  /* position: absolute; */
-  max-width: 1200px;
-  height: 100vh;
-
+  width: 1200px;
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 450px auto;
+  grid-template-columns: auto auto;
   align-items: center;
   justify-content: space-between;
-  /* background-color: grey; */
-  gap: 45px;
-  @media (max-width: 450px) {
+  /* gap: 45px; */
+
+  @media screen and (max-width: 1230px) {
+    width: 100%;
+    gap: 30px;
+  }
+
+  @media screen and (max-width: 988px) {
     grid-template-columns: auto;
+    justify-items: center;
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+  /* @media screen and (max-width: 768px) {
+    padding: 0 20px;
+    grid-template-columns: auto auto;
+    width: 100%;
+  } */
+
+  /* @media (max-width: 450px) {
+    grid-template-columns: auto;
+  } */
+`;
+
+const HeroQuote = styled.blockquote`
+  position: relative;
+  text-align: center;
+  padding: 1rem 1.2rem;
+  width: 80%; /* create space for the quotes */
+  color: #484748;
+  margin: 1rem auto 2rem 0rem;
+
+  background: linear-gradient(to right, #a9a8eb 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, #a9a8eb 4px, transparent 4px) 100% 0,
+    linear-gradient(to bottom, #a9a8eb 4px, transparent 4px) 100% 0,
+    linear-gradient(to top, #a9a8eb 4px, transparent 4px) 0 100%;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+
+  /* -- create the quotation marks -- */
+  :before {
+    font-family: FontAwesome;
+    position: absolute;
+    color: #a9a8eb;
+    font-size: 30px;
+    content: "\f10d";
+    top: -12px;
+    margin-right: -20px;
+    right: 100%;
+  }
+  :after {
+    font-family: FontAwesome;
+    position: absolute;
+    color: #a9a8eb;
+    font-size: 30px;
+    content: "\f10e";
+    margin-left: -20px;
+    left: 100%;
+    top: auto;
+    bottom: -20px;
+  }
+
+  @media screen and (max-width: 988px) {
+    margin: 1rem 2rem 2rem 2rem;
+    :before {
+      font-size: 24px;
+    }
+    :after {
+      font-size: 24px;
+    }
   }
 `;
 
-const HeroImage = styled.img``;
+const HeroQuoteCite = styled.cite`
+  font-style: italic;
+  font-weight: bold;
+`;
+
+const HeroImage = styled.img`
+  width: 100%;
+  @media screen and (max-width: 1230px) {
+    width: 400px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 350px;
+  }
+`;
 
 const HeroTextContainer = styled.div`
   margin-left: 36px;
   margin-right: 36px;
   display: grid;
   gap: 20px;
+
+  @media screen and (max-width: 988px) {
+    /* text-align: center; */
+    gap: 20px;
+    /* grid-template-rows: auto; */
+  }
 `;
 
-const HeroTextHeader = styled.h1`
+const HeroTextHeader = styled.div`
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
   line-height: 36px;
-  display: flex;
-  align-items: center;
 
   color: rgba(0, 0, 0, 0.8);
+
+  @media screen and (max-width: 1230px) {
+    font-size: 26px;
+  }
+
+  @media screen and (max-width: 988px) {
+    justify-self: center;
+  }
 `;
 
-const HeroTextBody = styled.p`
+const HeroTextBody = styled.div`
   /* margin-top: 15px; */
-  width: 520px;
-  height: 246px;
+  max-width: 520px;
+  /* height: 246px; */
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
   line-height: 140%;
-  /* or 28px */
-
-  display: flex;
-  align-items: center;
 
   color: rgba(0, 0, 0, 0.8);
+
+  @media screen and (max-width: 1230px) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 988px) {
+    text-align: center;
+    margin: 0 15px;
+  }
 `;
 
 const HeroButtonContainer = styled.div`
@@ -115,6 +209,10 @@ const HeroButtonContainer = styled.div`
   grid-template-columns: 140px 140px;
   gap: 20px;
   margin-top: 20px;
+
+  @media screen and (max-width: 988px) {
+    justify-content: center;
+  }
 `;
 
 const HeroLinkAbout = styled(LinkScroll)`

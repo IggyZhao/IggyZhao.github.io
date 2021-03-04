@@ -1,14 +1,45 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react";
 // import { animateScroll as scroll } from "react-scroll"
-import styled from "styled-components"
+import styled from "styled-components";
+
 // import { Link as LinkRouter } from "react-router-dom"
-import { Link as LinkScroll } from "react-scroll"
-import { Link } from "gatsby"
+import { Link as LinkScroll } from "react-scroll";
+import { Link } from "gatsby";
+import Tooltip from "../tooltip/Tooltip";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef();
+  const tooltipRef = useRef();
+
+  const setToggle = (event) => {
+    setIsOpen(!isOpen);
+    event.preventDefault();
+    //console.log(event);
+  };
+
+  function handleClickOutside(event) {
+    // console.log(ref.current);
+    if (
+      ref.current &&
+      !ref.current.contains(event.target) &&
+      !tooltipRef.current.contains(event.target)
+    ) {
+      console.log("Clicked!");
+      setIsOpen(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <HeaderContainer>
-      <HeaderContentContainer>
+      <HeaderContentContainer ref={ref}>
         <LogoContainer>
           <Link to="/">
             <HeaderLogo src="/icons/Logo.svg" alt="logo" />
@@ -16,7 +47,7 @@ function Header() {
           <HeaderTitle>Ziyi (Iggy) Zhao</HeaderTitle>
         </LogoContainer>
 
-        <MobileIcon>
+        <MobileIcon onClick={setToggle}>
           <ItemLogo src="/icons/3.svg" alt="about" />
         </MobileIcon>
 
@@ -89,11 +120,15 @@ function Header() {
             <HeaderLink>Contact</HeaderLink>
           </HeaderItem> */}
         </HeaderMenu>
+
+        <MenuTooltipWrapper ref={tooltipRef}>
+          <Tooltip isOpen={isOpen} />
+        </MenuTooltipWrapper>
       </HeaderContentContainer>
     </HeaderContainer>
-  )
+  );
 }
-export default Header
+export default Header;
 
 const HeaderContainer = styled.div`
   /* display: flex; */
@@ -108,27 +143,32 @@ const HeaderContainer = styled.div`
   display: grid;
   align-items: center;
   justify-items: center;
-  width: 100%;
-`
+`;
 
 const HeaderContentContainer = styled.div`
   display: grid;
   grid-template-columns: 259px auto;
-  width: 66.6%;
+  width: 1200px;
   justify-content: space-between;
   /* padding: 0 40px; */
   align-items: center;
 
-  @media screen and (max-width: 768px) {
-    padding: 0 20px;
+  @media screen and (max-width: 1230px) {
     grid-template-columns: auto auto;
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0 20px;
   }
 
   @media screen and (max-width: 480px) {
-    padding: 10;
-    grid-template-columns: auto auto;
+    width: 100%;
+    padding: 0 10px;
   }
-`
+`;
 
 const MobileIcon = styled.div`
   display: none;
@@ -144,7 +184,7 @@ const MobileIcon = styled.div`
 
     /* color: #fff; */
   }
-`
+`;
 
 const LogoContainer = styled.div`
   display: grid;
@@ -152,12 +192,12 @@ const LogoContainer = styled.div`
   gap: 10px;
   align-items: center;
   margin: 0 10px;
-`
+`;
 
 const HeaderLogo = styled.img`
   width: 44px;
   height: 44px;
-`
+`;
 
 const HeaderTitle = styled.div`
   font-style: normal;
@@ -179,7 +219,7 @@ const HeaderTitle = styled.div`
   @media screen and (max-width: 480px) {
     font-size: 16px;
   }
-`
+`;
 
 const HeaderMenu = styled.ul`
   display: grid;
@@ -195,12 +235,12 @@ const HeaderMenu = styled.ul`
   @media screen and (max-width: 768px) {
     display: none;
   }
-`
+`;
 
 const ItemLogo = styled.img`
   width: 24px;
   height: 24px;
-`
+`;
 
 const HeaderItem = styled.li`
   display: grid;
@@ -218,6 +258,8 @@ const HeaderItem = styled.li`
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1),
       inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.2);
   }
-`
+`;
 
-const HeaderLink = styled(LinkScroll)``
+const HeaderLink = styled(LinkScroll)``;
+
+const MenuTooltipWrapper = styled.div``;

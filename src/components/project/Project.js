@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components/macro"
-import DescriptionOutlinedIcon from "@material-ui/icons/DescriptionOutlined"
+import React from "react";
+import styled from "styled-components/macro";
+import DescriptionOutlinedIcon from "@material-ui/icons/DescriptionOutlined";
 
 function Project() {
   return (
@@ -94,28 +94,35 @@ function Project() {
         </ProjectBody>
       </ProjectContentContainer>
     </ProjectContainer>
-  )
+  );
 }
 
-export default Project
+export default Project;
 
 const ProjectContainer = styled.div`
   width: 100%;
-  height: 100vh;
   display: grid;
   justify-items: center;
   background-color: white;
-`
+`;
 
 const ProjectContentContainer = styled.div`
-  width: 66.66%;
-  margin-top: 120px;
-`
+  width: 1000px;
+  min-height: 100vh;
+  margin-top: 150px;
+  padding-bottom: 80px;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 480px) {
+    margin-top: 50px;
+  }
+`;
 
 const ProjectHeader = styled.div`
   display: grid;
   row-gap: 30px;
-`
+`;
 
 const ProjectTitle = styled.div`
   font-family: Spartan, sans-serif;
@@ -123,7 +130,15 @@ const ProjectTitle = styled.div`
   line-height: 32px;
   font-weight: 700;
   text-transform: none;
-`
+
+  @media screen and (max-width: 1024px) {
+    justify-self: center;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 26px;
+  }
+`;
 
 const ProjectParagraph = styled.div`
   width: 60%;
@@ -132,7 +147,12 @@ const ProjectParagraph = styled.div`
   font-size: 16px;
   line-height: 22px;
   text-align: left;
-`
+
+  @media screen and (max-width: 1024px) {
+    text-align: center;
+    justify-self: center;
+  }
+`;
 
 const ProjectBody = styled.div`
   margin-top: 10px;
@@ -142,7 +162,17 @@ const ProjectBody = styled.div`
   grid-template-rows: 1fr 1fr;
   column-gap: 60px;
   row-gap: 40px;
-`
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 66.6%;
+    justify-content: center;
+    row-gap: 60px;
+  }
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: 80%;
+  }
+`;
 
 const ProjectItem = styled.div`
   position: relative;
@@ -156,7 +186,7 @@ const ProjectItem = styled.div`
   :hover {
     cursor: pointer;
   }
-`
+`;
 
 const ProjectBorder = styled.div`
   width: 100%;
@@ -165,19 +195,32 @@ const ProjectBorder = styled.div`
   top: 20px;
   left: 20px;
   border: 1px solid #000000;
-`
+
+  @media screen and (max-width: 480px) {
+    top: 6px;
+    left: 6px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  }
+`;
 
 const ProjectItemTitle = styled.div`
-  /* margin-top: 20px; */
-  font-family: Spartan, sans-serif;
   font-size: 20px;
   line-height: 28px;
-  font-weight: 600;
-`
+  font-weight: 700;
+
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+`;
 
 const ProjectItemParagraph = styled.div`
-  font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
   line-height: 22px;
   text-align: left;
-`
+
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+`;

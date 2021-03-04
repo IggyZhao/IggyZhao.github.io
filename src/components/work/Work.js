@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components/macro"
-import BusinessCenterOutlinedIcon from "@material-ui/icons/BusinessCenterOutlined"
+import React from "react";
+import styled from "styled-components/macro";
+import BusinessCenterOutlinedIcon from "@material-ui/icons/BusinessCenterOutlined";
 
 function Work() {
   return (
@@ -52,28 +52,36 @@ function Work() {
         </WorkBody>
       </WorkContentContainer>
     </WorkContainer>
-  )
+  );
 }
 
-export default Work
+export default Work;
 
 const WorkContainer = styled.div`
   width: 100%;
-  height: 100vh;
   display: grid;
   justify-items: center;
   background-color: #f2f6ff;
-`
+`;
 
 const WorkContentContainer = styled.div`
-  width: 66.66%;
+  width: 1000px;
+  min-height: 100vh;
   margin-top: 150px;
-`
+  padding-bottom: 80px;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-top: 50px;
+  }
+`;
 
 const WorkHeader = styled.div`
   display: grid;
   row-gap: 44px;
-`
+`;
 
 const WorkTitle = styled.div`
   font-family: Spartan, sans-serif;
@@ -81,23 +89,52 @@ const WorkTitle = styled.div`
   line-height: 36px;
   font-weight: 700;
   text-transform: none;
-`
+
+  @media screen and (max-width: 1024px) {
+    justify-self: center;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 26px;
+  }
+`;
 
 const WorkParagraph = styled.div`
   width: 60%;
   /* margin-bottom: 16px; */
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
   font-size: 16px;
   line-height: 22px;
   text-align: left;
-`
+
+  @media screen and (max-width: 1024px) {
+    text-align: center;
+    justify-self: center;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1.1px;
+  }
+`;
 
 const WorkBody = styled.div`
   margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 60px;
-`
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 66.6%;
+    justify-content: center;
+    row-gap: 60px;
+  }
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: 80%;
+  }
+`;
 
 const WorkItem = styled.div`
   position: relative;
@@ -111,7 +148,11 @@ const WorkItem = styled.div`
   :hover {
     cursor: pointer;
   }
-`
+
+  @media screen and (max-width: 480px) {
+    padding: 40px 20px 40px 40px;
+  }
+`;
 
 const WorkBorder = styled.div`
   width: 100%;
@@ -120,19 +161,33 @@ const WorkBorder = styled.div`
   top: 20px;
   left: 20px;
   border: 1px solid #000000;
-`
+
+  @media screen and (max-width: 480px) {
+    top: 6px;
+    left: 6px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  }
+`;
 
 const WorkItemTitle = styled.div`
   /* margin-top: 20px; */
-  font-family: Spartan, sans-serif;
+  /* font-family: Spartan, sans-serif; */
   font-size: 20px;
   line-height: 28px;
-  font-weight: 600;
-`
+  font-weight: 700;
+
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+`;
 
 const WorkItemParagraph = styled.div`
-  font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
   line-height: 22px;
   text-align: left;
-`
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+`;

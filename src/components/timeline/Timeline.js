@@ -1,8 +1,7 @@
-// import { Toys } from "@material-ui/icons"
-import React from "react"
-import styled from "styled-components/macro"
+import React from "react";
+import styled from "styled-components/macro";
 
-const years = ["2016", "2017", "2018", "2019", "2020", "2021"]
+const years = ["2016", "2017", "2018", "2019", "2020", "2021"];
 
 function Timeline() {
   return (
@@ -10,7 +9,7 @@ function Timeline() {
       <TimelineContentContainer>
         <TimelineHeaderContainer>
           <EmptyItem />
-          {years.map(year => (
+          {years.map((year) => (
             <YearIcon key={year}>{year}</YearIcon>
           ))}
         </TimelineHeaderContainer>
@@ -107,29 +106,31 @@ function Timeline() {
         </TimelineItem>
       </TimelineContentContainer>
     </TimelineContainer>
-  )
+  );
 }
 
-export default Timeline
+export default Timeline;
 
 const TimelineContainer = styled.div`
-  /* margin-top: 80px; */
-  /* top: -80px; */
   width: 100%;
-  height: 100vh;
   background-color: #f2f6ff;
   position: relative;
   display: grid;
-`
+`;
 
 const TimelineContentContainer = styled.div`
   justify-self: center;
-  width: 66.6%;
-`
+  max-width: 1200px;
+  min-height: 100vh;
+
+  @media screen and (max-width: 480px) {
+    padding-bottom: 30px;
+    min-height: 0;
+    height: 100%;
+  }
+`;
 
 const TimelineHeaderContainer = styled.div`
-  /* position: absolute;
-  top: 80px; */
   display: grid;
   grid-template-columns: 3fr repeat(6, 2fr);
   width: 100%;
@@ -137,16 +138,22 @@ const TimelineHeaderContainer = styled.div`
   justify-items: center;
   padding: 10px;
   border-bottom: 10px solid rgba(239, 229, 253, 0.7);
-`
 
-const EmptyItem = styled.div``
+  @media screen and (max-width: 480px) {
+    padding: 5px;
+    border-bottom: 5px solid rgba(239, 229, 253, 0.7);
+  }
+`;
+
+const EmptyItem = styled.div``;
 
 const YearIcon = styled.div`
   /* grid-area: year; */
   display: grid;
   width: 65px;
   height: 65px;
-  background: linear-gradient(180deg, #9f8aff 0%, rgba(243, 86, 254, 0) 100%);
+  background: #9f8aff;
+  /* background: linear-gradient(180deg, #9f8aff 0%, rgba(243, 86, 254, 0) 100%); */
   /* border: 1px solid #000; */
   border-radius: 999px;
   font-weight: bold;
@@ -156,7 +163,14 @@ const YearIcon = styled.div`
   align-items: center;
   margin: 20px 0;
   /* background-color: red; */
-`
+
+  @media screen and (max-width: 480px) {
+    margin: 10px 0;
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+  }
+`;
 const TimelineItem = styled.div`
   display: grid;
   background-color: #f2f6ff;
@@ -168,8 +182,12 @@ const TimelineItem = styled.div`
   border-top: 0px solid rgba(239, 229, 253, 0.7);
   /* border-bottom: 10px solid rgba(239, 229, 253, 0.7); */
 
+  @media screen and (max-width: 480px) {
+    border: 5px solid rgba(239, 229, 253, 0.7);
+    border-top: 0px solid rgba(239, 229, 253, 0.7);
+  }
   /* align-items: center; */
-`
+`;
 
 const TimelineLogo = styled.div`
   display: grid;
@@ -183,19 +201,34 @@ const TimelineLogo = styled.div`
 
   grid-column: ${({ col }) => col} / span ${({ colLen }) => colLen};
   grid-row: ${({ row }) => row} / span ${({ rowLen }) => rowLen};
-`
+
+  @media screen and (max-width: 480px) {
+    border-right: 5px solid rgba(239, 229, 253, 0.7);
+  }
+`;
 
 const TimelineIcon = styled.img`
   /* max-height: 140px; */
   width: 160px;
   height: 130px;
-`
+
+  @media screen and (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+  }
+`;
 
 const TimelineTitle = styled.div`
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 700;
   color: rgba(0, 0, 0, 0.7);
-`
+  text-align: center;
+
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+    width: 70px;
+  }
+`;
 // const TimelineGrid = styled.div`
 //   background-color: ${({ isEven }) => (isEven ? "#CCD0FC" : "#B5CDFB")};
 // `
@@ -211,11 +244,17 @@ const GanttItem = styled.div`
   text-align: center;
 
   color: #000000;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 16px;
 
   grid-column: ${({ col }) => col} / span ${({ colLen }) => colLen};
   grid-row: ${({ row }) => row} / span ${({ rowLen }) => rowLen};
   align-self: center;
   /* justify-self: center; */
-`
+
+  @media screen and (max-width: 480px) {
+    height: 24px;
+    font-size: 10px;
+    font-weight: 500;
+  }
+`;
