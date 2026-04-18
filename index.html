@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-mode="paper">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Ziyi Zhao — Assistant Professor, FIU</title>
+<meta name="description" content="Ziyi (Iggy) Zhao — Assistant Professor of Information Systems & Business Analytics, Florida International University." />
+
+<meta name="ext-resource-dependency" content="assets/portrait-cutout-clean.png" data-resource-id="portrait" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="src/styles.css?v=4"/>
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#F4EFE6">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EFE6"/>
+    <circle cx="600" cy="380" r="140" fill="#B8743A" opacity="0.7"/>
+    <text x="600" y="560" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="120" fill="#141210" font-weight="300">Ziyi</text>
+    <text x="600" y="660" text-anchor="middle" font-family="monospace" font-size="20" fill="#8A8177" letter-spacing="6">ZHAO · FIU</text>
+  </svg>
+</template>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="src/data.js?v=7"></script>
+<script type="text/babel" src="src/hero.jsx?v=8"></script>
+<script type="text/babel" src="src/papers.jsx?v=3"></script>
+<script type="text/babel" src="src/map.jsx?v=16"></script>
+<script type="text/babel" src="src/sections.jsx?v=7"></script>
+
+<script type="text/babel">
+  function App() {
+    return (
+      <>
+        <Reveal/>
+        <Topbar/>
+        <Hero3D/>
+        <About/>
+        <PapersSection/>
+        <MapSection/>
+        <Teaching/>
+        <Honors/>
+        <Service/>
+        <Education/>
+        <Contact/>
+        <footer>
+          <span>© 2026 Ziyi Zhao</span>
+          <span>Miami, FL</span>
+          <span>Updated April 2026</span>
+        </footer>
+        <Tweaks/>
+      </>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+
+</body>
+</html>
