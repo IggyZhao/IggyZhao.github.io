@@ -282,7 +282,6 @@ function Contact() {
       <h2 className="contact-big reveal">
         Get in <em>touch.</em>
       </h2>
-      <a href="mailto:ziyzhao@fiu.edu" className="contact-email reveal">ziyzhao@fiu.edu</a>
       <div className="contact-meta">
         <div><h6>Office</h6><p>Florida International University<br/>College of Business<br/>11200 SW 8th St<br/>Miami, FL 33199</p></div>
         <div><h6>Email</h6><p><a href="mailto:ziyzhao@fiu.edu" style={{borderBottom:'1px solid'}}>ziyzhao@fiu.edu</a></p></div>
