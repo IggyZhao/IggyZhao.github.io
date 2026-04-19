@@ -45,9 +45,6 @@ function About() {
 
 function MethodsMarquee() {
   const items = window.CV.research.methods.flatMap(m => m.items);
-  const half = Math.ceil(items.length / 2);
-  const rowA = items.slice(0, half);
-  const rowB = items.slice(half);
   const render = (arr) => arr.flatMap((w, i) => [
     <span key={`w${i}`} className="mm-word">{w}</span>,
     <span key={`s${i}`} className="mm-star">✦</span>
@@ -58,16 +55,9 @@ function MethodsMarquee() {
       <div className="mm-rows">
         <div className="mm-track">
           <div className="mm-inner mm-ltr">
-            <span>{render(rowA)}</span>
-            <span>{render(rowA)}</span>
-            <span>{render(rowA)}</span>
-          </div>
-        </div>
-        <div className="mm-track">
-          <div className="mm-inner mm-rtl">
-            <span>{render(rowB)}</span>
-            <span>{render(rowB)}</span>
-            <span>{render(rowB)}</span>
+            <span>{render(items)}</span>
+            <span>{render(items)}</span>
+            <span>{render(items)}</span>
           </div>
         </div>
       </div>
