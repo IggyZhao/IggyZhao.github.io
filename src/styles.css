@@ -1039,8 +1039,8 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   columns: 2; column-gap: 60px; }
 .service-community li {
   break-inside: avoid;
-  font-family: var(--serif); font-size: 16.5px; line-height: 1.5;
-  padding: 9px 0; color: var(--ink-soft);
+  font-family: var(--serif); font-size: 17.5px; line-height: 1.5;
+  padding: 10px 0; color: var(--ink-soft);
   padding-left: 18px; position: relative;
 }
 .service-community li::before {
@@ -1296,7 +1296,7 @@ footer {
   .service-stats .n { font-size: 38px; }
   .service-roles li { grid-template-columns: 32px 1fr; gap: 14px; font-size: 16px; padding: 16px 0; }
   .service-community { columns: 1; column-gap: 0; }
-  .service-community li { font-size: 15px; }
+  .service-community li { font-size: 16px; }
   .reviewer-grid { grid-template-columns: 1fr; gap: 36px; }
   .rev-row { grid-template-columns: 1fr 60px 28px; gap: 10px; }
   .rev-name { font-size: 16px; }
