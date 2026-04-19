@@ -54,7 +54,7 @@ function MethodsMarquee() {
   ]);
   return (
     <div className="methods-marquee reveal">
-      <div className="mm-label">Methods I use</div>
+      <div className="mm-label">methods</div>
       <div className="mm-rows">
         <div className="mm-track">
           <div className="mm-inner mm-ltr">

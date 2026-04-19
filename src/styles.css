@@ -946,16 +946,16 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   margin-bottom: 60px;
 }
 .hh-label {
-  font-family: var(--mono); font-size: 11px; letter-spacing: .18em;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .18em;
   text-transform: uppercase; color: var(--amber);
   padding-top: 8px;
 }
 .hh-list { list-style: none; padding: 0; margin: 0; column-count: 2; column-gap: 60px; }
 .hh-list li {
   break-inside: avoid; page-break-inside: avoid;
-  font-family: var(--serif); font-size: 16px; line-height: 1.45;
-  padding: 8px 0; color: var(--ink);
-  position: relative; padding-left: 16px;
+  font-family: var(--serif); font-size: 17.5px; line-height: 1.5;
+  padding: 9px 0; color: var(--ink);
+  position: relative; padding-left: 18px;
 }
 .hh-list li::before {
   content: "•"; position: absolute; left: 0; top: 8px;
@@ -973,18 +973,18 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
 }
 .honor-block-label {
   display: flex; justify-content: space-between; align-items: baseline;
-  font-family: var(--mono); font-size: 11px; letter-spacing: .14em;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .14em;
   text-transform: uppercase; color: var(--ink);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 .honor-count {
-  font-family: var(--display); font-size: 20px; letter-spacing: -0.01em;
+  font-family: var(--display); font-size: 22px; letter-spacing: -0.01em;
   color: var(--amber); font-weight: 400;
 }
 .honor-list { list-style: none; padding: 0; margin: 0; }
 .honor-list li {
-  font-family: var(--serif); font-size: 14px; line-height: 1.5;
-  padding: 10px 0; border-bottom: 1px solid var(--line-2);
+  font-family: var(--serif); font-size: 16px; line-height: 1.55;
+  padding: 11px 0; border-bottom: 1px solid var(--line-2);
   color: var(--ink-soft);
 }
 .honor-list li:last-child { border-bottom: none; }
@@ -1006,19 +1006,19 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   font-weight: 300; letter-spacing: -0.02em; color: var(--ink);
 }
 .service-stats .l {
-  font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em;
   text-transform: uppercase; color: var(--muted); margin-top: 10px;
 }
 
 .ss-label {
   display: flex; justify-content: space-between; align-items: baseline;
-  font-family: var(--mono); font-size: 11px; letter-spacing: .18em;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .18em;
   text-transform: uppercase; color: var(--ink);
   padding-bottom: 18px; margin-bottom: 24px;
   border-bottom: 1px solid var(--ink);
 }
 .ss-count {
-  font-family: var(--display); font-size: 18px; letter-spacing: -0.01em;
+  font-family: var(--display); font-size: 20px; letter-spacing: -0.01em;
   color: var(--amber); text-transform: none; letter-spacing: 0;
 }
 
@@ -1026,12 +1026,12 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
 .service-roles { list-style: none; padding: 0; margin: 0; }
 .service-roles li {
   display: grid; grid-template-columns: 48px 1fr; gap: 24px;
-  padding: 16px 0; border-bottom: 1px solid var(--line-2);
-  font-family: var(--serif); font-size: 16px; line-height: 1.45;
+  padding: 18px 0; border-bottom: 1px solid var(--line-2);
+  font-family: var(--serif); font-size: 17.5px; line-height: 1.5;
   color: var(--ink); align-items: baseline;
 }
 .service-roles li .idx {
-  font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em;
   color: var(--muted);
 }
 
@@ -1039,9 +1039,9 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   columns: 2; column-gap: 60px; }
 .service-community li {
   break-inside: avoid;
-  font-family: var(--serif); font-size: 15px; line-height: 1.45;
-  padding: 8px 0; color: var(--ink-soft);
-  padding-left: 16px; position: relative;
+  font-family: var(--serif); font-size: 16.5px; line-height: 1.5;
+  padding: 9px 0; color: var(--ink-soft);
+  padding-left: 18px; position: relative;
 }
 .service-community li::before {
   content: "—"; position: absolute; left: 0; color: var(--amber);
@@ -1054,7 +1054,7 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   gap: 16px; align-items: center;
 }
 .rev-name {
-  font-family: var(--serif); font-size: 14px; line-height: 1.35;
+  font-family: var(--serif); font-size: 15.5px; line-height: 1.4;
   color: var(--ink);
 }
 .rev-bar {
@@ -1066,7 +1066,7 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   background: var(--amber);
 }
 .rev-count {
-  font-family: var(--mono); font-size: 12px; letter-spacing: .02em;
+  font-family: var(--mono); font-size: 13px; letter-spacing: .02em;
   color: var(--ink); text-align: right; font-weight: 500;
 }
 
@@ -1285,21 +1285,21 @@ footer {
     padding: 28px 22px; margin-bottom: 44px;
   }
   .hh-list { column-count: 1; column-gap: 0; }
-  .hh-list li { font-size: 15px; }
+  .hh-list li { font-size: 16px; }
   .honors-institutions { grid-template-columns: 1fr; gap: 40px; }
   .honors-misc { grid-template-columns: 1fr; gap: 30px; padding-top: 28px; }
-  .honor-list li { font-size: 13.5px; }
+  .honor-list li { font-size: 15px; }
 
   /* Service */
   .service-stats { grid-template-columns: 1fr 1fr; }
   .service-stats .ss { padding: 20px 18px; }
   .service-stats .n { font-size: 38px; }
-  .service-roles li { grid-template-columns: 32px 1fr; gap: 14px; font-size: 15px; padding: 14px 0; }
+  .service-roles li { grid-template-columns: 32px 1fr; gap: 14px; font-size: 16px; padding: 16px 0; }
   .service-community { columns: 1; column-gap: 0; }
-  .service-community li { font-size: 14px; }
+  .service-community li { font-size: 15px; }
   .reviewer-grid { grid-template-columns: 1fr; gap: 36px; }
   .rev-row { grid-template-columns: 1fr 60px 28px; gap: 10px; }
-  .rev-name { font-size: 13px; }
+  .rev-name { font-size: 14.5px; }
 
   /* Invited talks */
   .talk-row { padding: 16px 0; }
