@@ -97,7 +97,7 @@ function Education() {
 }
 
 function Teaching() {
-  const [open, setOpen] = useState(new Set([0]));
+  const [open, setOpen] = useState(new Set());
   const toggle = (i) => {
     const n = new Set(open);
     n.has(i) ? n.delete(i) : n.add(i);
