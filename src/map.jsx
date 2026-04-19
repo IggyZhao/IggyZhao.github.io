@@ -70,7 +70,7 @@ function MapSection() {
   const appearances = useMemo(() => {
     const conf = window.CV.presentations.map(p => ({
       kind: "conference",
-      date: p.date, venue: p.venue, city: p.city, lat: p.lat, lng: p.lng,
+      date: p.date, displayDate: p.displayDate, venue: p.venue, city: p.city, lat: p.lat, lng: p.lng,
       title: p.title, authors: p.authors,
     }));
     const cityCoords = {};
