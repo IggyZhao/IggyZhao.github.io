@@ -17,6 +17,40 @@ function MapSection() {
   });
   const W = 2000, H = 1000;
 
+  // Desktop = show 3D globe; mobile/tablet = keep flat SVG map.
+  const [isDesktop, setIsDesktop] = useState(
+    typeof window !== "undefined" && window.matchMedia &&
+    window.matchMedia("(min-width: 900px)").matches
+  );
+  useEffect(() => {
+    if (!window.matchMedia) return;
+    const mq = window.matchMedia("(min-width: 900px)");
+    const handler = (e) => setIsDesktop(e.matches);
+    mq.addEventListener ? mq.addEventListener("change", handler) : mq.addListener(handler);
+    return () => {
+      mq.removeEventListener ? mq.removeEventListener("change", handler) : mq.removeListener(handler);
+    };
+  }, []);
+
+  // Lazy-load globe.gl only on desktop.
+  const [globeReady, setGlobeReady] = useState(typeof window !== "undefined" && !!window.Globe);
+  useEffect(() => {
+    if (!isDesktop || globeReady) return;
+    if (window.Globe) { setGlobeReady(true); return; }
+    if (!document.getElementById("globe-gl-script")) {
+      const s = document.createElement("script");
+      s.id = "globe-gl-script";
+      s.src = "https://unpkg.com/globe.gl@2";
+      s.async = true;
+      document.head.appendChild(s);
+    }
+    const iv = setInterval(() => {
+      if (window.Globe) { setGlobeReady(true); clearInterval(iv); }
+    }, 150);
+    const to = setTimeout(() => clearInterval(iv), 12000);
+    return () => { clearInterval(iv); clearTimeout(to); };
+  }, [isDesktop, globeReady]);
+
   useEffect(() => {
     fetch("assets/dotted-world.svg").then(r => r.text()).then(raw => {
       // Crop polar areas and inflate dot radius + add the paper-cut filter defs.
@@ -107,8 +141,11 @@ function MapSection() {
         <h2 className="section-title">Where the <em>work</em> has travelled.</h2>
       </div>
 
-      <div className="map-layout reveal">
-        <div className="map-wrap">
+      <div className={`map-layout reveal ${isDesktop && globeReady ? "has-globe" : ""}`}>
+        <div className={`map-wrap ${isDesktop && globeReady ? "has-globe" : ""}`}>
+          {isDesktop && globeReady ? (
+            <GlobeView cities={cities} active={active} onSelect={setActive} />
+          ) : (<>
           <div className="map-bg" dangerouslySetInnerHTML={{__html: mapSvg}}/>
           <svg className="map-overlay" viewBox="0 110 2000 680" preserveAspectRatio="xMidYMid slice">
             {/* Latitude guide lines (equator ≈ y500, tropics ±23.5° ≈ y370 & y630) */}
@@ -164,6 +201,7 @@ function MapSection() {
               );
             })}
           </svg>
+          </>)}
         </div>
 
         {/* Detail panel — only mounted when a city is active */}
@@ -288,6 +326,112 @@ function MapSection() {
       </div>
     </section>
   );
+}
+
+// 3D globe view — globe.gl (Three.js) + hex-dotted land to echo the flat map's aesthetic.
+function GlobeView({ cities, active, onSelect }) {
+  const mountRef = useRef(null);
+  const worldRef = useRef(null);
+
+  useEffect(() => {
+    if (!window.Globe || !mountRef.current) return;
+    const el = mountRef.current;
+
+    const HOME = { lat: 25.76, lng: -80.19 }; // Miami
+    const arcs = cities
+      .filter(c => !(Math.abs(c.lat - HOME.lat) < 0.5 && Math.abs(c.lng - HOME.lng) < 0.5))
+      .map(c => ({ startLat: HOME.lat, startLng: HOME.lng, endLat: c.lat, endLng: c.lng }));
+
+    const world = window.Globe()(el)
+      .backgroundColor("rgba(0,0,0,0)")
+      .showAtmosphere(true)
+      .atmosphereColor("#B8743A")
+      .atmosphereAltitude(0.16)
+      .pointsData(cities)
+      .pointLat(d => d.lat)
+      .pointLng(d => d.lng)
+      .pointColor(d => (d.city === active ? "#B8743A" : "#A85643"))
+      .pointAltitude(0.008)
+      .pointRadius(0.6)
+      .pointLabel(d =>
+        `<div style="font:500 10px/1 'JetBrains Mono',ui-monospace,monospace;`+
+        `padding:7px 11px;background:#F4EFE6;color:#141210;letter-spacing:.14em;`+
+        `text-transform:uppercase;border:1px solid rgba(20,18,16,0.14);`+
+        `box-shadow:0 8px 22px rgba(20,18,16,0.18);">`+
+        `${d.city.split(",")[0]} · ${d.items.length} ${d.items.length===1?"talk":"talks"}</div>`
+      )
+      .onPointClick(p => onSelect(p.city))
+      .arcsData(arcs)
+      .arcStartLat(d => d.startLat).arcStartLng(d => d.startLng)
+      .arcEndLat(d => d.endLat).arcEndLng(d => d.endLng)
+      .arcColor(() => ["rgba(184,116,58,0)", "rgba(184,116,58,0.8)", "rgba(184,116,58,0)"])
+      .arcStroke(0.35)
+      .arcDashLength(0.45)
+      .arcDashGap(0.25)
+      .arcDashAnimateTime(3500)
+      .arcAltitudeAutoScale(0.45);
+
+    // Tint globe material to match paper palette.
+    try {
+      const mat = world.globeMaterial();
+      if (mat && mat.color && mat.color.set) mat.color.set("#CFC4AD");
+    } catch (e) {}
+
+    // Controls: slow auto-rotate, drag to rotate, no scroll-zoom hijack.
+    const controls = world.controls();
+    controls.enableZoom = false;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 0.35;
+
+    // Size to container.
+    const resize = () => world.width(el.clientWidth).height(el.clientHeight);
+    resize();
+    const ro = new ResizeObserver(resize);
+    ro.observe(el);
+
+    // Initial view — western hemisphere (home is Miami).
+    world.pointOfView({ lat: 22, lng: -55, altitude: 2.1 }, 0);
+
+    // Load dotted land polygons (async).
+    fetch("https://unpkg.com/three-globe@2.31.1/example/ne_110m_admin_0_countries.geojson")
+      .then(r => (r.ok ? r.json() : null))
+      .then(data => {
+        if (!data || !worldRef.current) return;
+        worldRef.current.hexPolygonsData(data.features)
+          .hexPolygonResolution(3)
+          .hexPolygonMargin(0.4)
+          .hexPolygonUseDots(true)
+          .hexPolygonColor(() => "rgba(20,18,16,0.55)");
+      })
+      .catch(() => {});
+
+    worldRef.current = world;
+
+    return () => {
+      try { ro.disconnect(); } catch (e) {}
+      if (worldRef.current && worldRef.current._destructor) {
+        try { worldRef.current._destructor(); } catch (e) {}
+      }
+      worldRef.current = null;
+      if (el) el.innerHTML = "";
+    };
+  }, [cities]);
+
+  // Recolor + camera response to active-city changes.
+  useEffect(() => {
+    const w = worldRef.current;
+    if (!w) return;
+    w.pointColor(d => (d.city === active ? "#B8743A" : "#A85643"));
+    if (active) {
+      w.controls().autoRotate = false;
+      const c = cities.find(x => x.city === active);
+      if (c) w.pointOfView({ lat: c.lat, lng: c.lng, altitude: 1.8 }, 900);
+    } else {
+      w.controls().autoRotate = true;
+    }
+  }, [active, cities]);
+
+  return <div ref={mountRef} className="globe-mount" />;
 }
 
 Object.assign(window, { MapSection });
