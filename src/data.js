@@ -86,7 +86,7 @@ window.CV = {
       id: "timing",
       authors: "Yang, R., Zhao, Z., Cho, K., & Ayabakan, S.",
       title: "Timing Matters: AI Response Time in Healthcare Decision-Making",
-      presented: ["ICIS 2025", "CHITA 2026"],
+      presented: ["ICIS 2025", "CHITA 2026", "INFORMS 2026"],
     },
   ],
 
@@ -102,6 +102,7 @@ window.CV = {
 
   // Presentations with geography for the map. Each has its own title.
   presentations: [
+    { date: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "Timing Matters: AI Response Time in Healthcare Decision-Making", authors: "Yang*, Zhao, Cho, Ayabakan", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-06", venue: "Statistical Challenges in eCommerce Research (SCECR 2026)", title: "The Generativity Paradox: When Eliminating Creation Barriers Deepens Adoption Inequality in AI Agent Ecosystems", authors: "Boussioux, Zhao, Cho*", city: "Tokyo, Japan", lat: 35.68, lng: 139.69 },
     { date: "2026-05", venue: "Academy of Management Annual Meeting (AOM 2026)", title: "When Code Writes the Coder: The Delegation-Validation Trap in Vibe Coding", authors: "Boussioux, Zhao*, Cho", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
     { date: "2026-05", venue: "Wharton AI and the Future of Work Conference", title: "When Code Writes the Coder: The Delegation-Validation Trap in Vibe Coding", authors: "Boussioux, Zhao, Cho*", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
