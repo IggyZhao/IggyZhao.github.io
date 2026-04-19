@@ -397,8 +397,8 @@ function GlobeView({ cities, active, onSelect }) {
     const ro = new ResizeObserver(resize);
     ro.observe(el);
 
-    // Initial view — western hemisphere (home is Miami).
-    world.pointOfView({ lat: 22, lng: -55, altitude: 2.1 }, 0);
+    // Initial view — western hemisphere (home is Miami), zoomed out so globe doesn't dominate.
+    world.pointOfView({ lat: 22, lng: -55, altitude: 2.9 }, 0);
 
     // Load dotted land polygons (async).
     fetch("https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson")
@@ -433,7 +433,7 @@ function GlobeView({ cities, active, onSelect }) {
     if (active) {
       w.controls().autoRotate = false;
       const c = cities.find(x => x.city === active);
-      if (c) w.pointOfView({ lat: c.lat, lng: c.lng, altitude: 1.8 }, 900);
+      if (c) w.pointOfView({ lat: c.lat, lng: c.lng, altitude: 2.2 }, 900);
     } else {
       w.controls().autoRotate = true;
     }
