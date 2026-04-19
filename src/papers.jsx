@@ -13,8 +13,8 @@ function PapersSection() {
   }, []);
 
   const filtered = filter === "all" ? all : all.filter(p => p.kind === filter);
-  const label = { under: "Under Review", progress: "Work in Progress", published: "Published", all: "All" };
-  const statusLabel = { under: "Under Review", progress: "In Progress", published: "Published" };
+  const label = { under: "Working Paper", progress: "Work in Progress", published: "Published", all: "All" };
+  const statusLabel = { under: "Working Paper", progress: "In Progress", published: "Published" };
 
   return (
     <section className="block" id="research">
