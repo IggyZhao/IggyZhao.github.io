@@ -351,8 +351,8 @@ function GlobeView({ cities, active, onSelect }) {
       .pointLat(d => d.lat)
       .pointLng(d => d.lng)
       .pointColor(d => (d.city === active ? "#B8743A" : "#A85643"))
-      .pointAltitude(0.008)
-      .pointRadius(0.6)
+      .pointAltitude(0.012)
+      .pointRadius(1.2)
       .pointLabel(d =>
         `<div style="font:500 10px/1 'JetBrains Mono',ui-monospace,monospace;`+
         `padding:7px 11px;background:#F4EFE6;color:#141210;letter-spacing:.14em;`+
@@ -361,6 +361,14 @@ function GlobeView({ cities, active, onSelect }) {
         `${d.city.split(",")[0]} · ${d.items.length} ${d.items.length===1?"talk":"talks"}</div>`
       )
       .onPointClick(p => onSelect(p.city))
+      .onPointHover(p => { el.style.cursor = p ? "pointer" : "grab"; })
+      .ringsData(cities)
+      .ringLat(d => d.lat)
+      .ringLng(d => d.lng)
+      .ringColor(() => t => `rgba(184,116,58,${1 - t})`)
+      .ringMaxRadius(2.2)
+      .ringPropagationSpeed(1.2)
+      .ringRepeatPeriod(2400)
       .arcsData(arcs)
       .arcStartLat(d => d.startLat).arcStartLng(d => d.startLng)
       .arcEndLat(d => d.endLat).arcEndLng(d => d.endLng)
@@ -393,15 +401,15 @@ function GlobeView({ cities, active, onSelect }) {
     world.pointOfView({ lat: 22, lng: -55, altitude: 2.1 }, 0);
 
     // Load dotted land polygons (async).
-    fetch("https://unpkg.com/three-globe@2.31.1/example/ne_110m_admin_0_countries.geojson")
+    fetch("https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson")
       .then(r => (r.ok ? r.json() : null))
       .then(data => {
         if (!data || !worldRef.current) return;
         worldRef.current.hexPolygonsData(data.features)
           .hexPolygonResolution(3)
-          .hexPolygonMargin(0.4)
+          .hexPolygonMargin(0.35)
           .hexPolygonUseDots(true)
-          .hexPolygonColor(() => "rgba(20,18,16,0.55)");
+          .hexPolygonColor(() => "rgba(20,18,16,0.6)");
       })
       .catch(() => {});
 
