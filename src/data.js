@@ -307,7 +307,7 @@ window.CV = {
       "Committee Member, KrAIS Summer Workshop 2023",
     ],
     journalReviewer: [
-      { name: "Information Technology for Development", count: 45 },
+      { name: "Information Technology for Development", count: 46 },
       { name: "Internet Research", count: 15 },
       { name: "Industrial Management & Data Systems", count: 4 },
       { name: "Information Systems Research", count: 3 },
