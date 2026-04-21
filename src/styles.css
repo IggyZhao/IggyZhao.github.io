@@ -485,9 +485,8 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   display: flex; align-items: center; justify-content: center;
   padding: 40px;
   opacity: 0; pointer-events: none;
-  transition: opacity .35s;
+  transition: opacity .3s;
   backdrop-filter: blur(6px);
-  perspective: 1800px;
 }
 .paper-modal.open { opacity: 1; pointer-events: auto; }
 .paper-modal-inner {
@@ -495,20 +494,12 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   max-width: 720px; width: 100%; max-height: 85vh; overflow-y: auto;
   padding: 56px;
   position: relative;
-  transform-origin: top right;
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.3),
-    0 10px 30px rgba(0,0,0,.2);
-  animation: modalCornerUnfold .6s cubic-bezier(.2,.85,.2,1) both;
+  transform: translateY(30px) rotate(-0.5deg);
+  transition: transform .4s cubic-bezier(.2,.9,.1,1);
+  box-shadow: 0 40px 100px rgba(0,0,0,.4);
 }
 [data-mode="night"] .paper-modal-inner { background: #1F1E1A; color: var(--ink); }
-
-@keyframes modalCornerUnfold {
-  0%   { transform: scale(.04) rotate(-10deg); opacity: 0; }
-  40%  { opacity: 1; }
-  65%  { transform: scale(1.03) rotate(1deg); }
-  100% { transform: scale(1) rotate(0); opacity: 1; }
-}
+.paper-modal.open .paper-modal-inner { transform: none; }
 
 .paper-modal-inner::before {
   content: ""; position: absolute; top: 0; right: 0;
