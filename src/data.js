@@ -68,7 +68,7 @@ window.CV = {
       id: "invisible",
       authors: "Zhao, Z., Cho, K., Aaltonen, A., & Straub, D.",
       title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration",
-      presented: ["INFORMS 2025", "INFORMS Data Science 2025", "NYU AI Workshop 2025", "Wharton AI and the Future of Work 2025"],
+      presented: ["INFORMS 2025", "INFORMS Data Science 2025", "NYU AI Workshop 2025", "Wharton AI and the Future of Work 2025", "DSI 2026"],
     },
     {
       id: "vibecoding",
@@ -109,6 +109,7 @@ window.CV = {
   // Presentations with geography for the map. Each has its own title.
   presentations: [
     { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "When AI Slows You Down: Ambient Documentation and ED Throughput Across 362,000 Visits", authors: "Miri, Hertelendy, Zhao*, Cho, Doherty", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration", authors: "Zhao*, Cho, Aaltonen, Straub", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "Timing Matters: AI Response Time in Healthcare Decision-Making", authors: "Yang*, Zhao, Cho, Ayabakan", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-06", venue: "Statistical Challenges in eCommerce Research (SCECR 2026)", title: "The Generativity Paradox: When Eliminating Creation Barriers Deepens Adoption Inequality in AI Agent Ecosystems", authors: "Boussioux, Zhao, Cho*", city: "Tokyo, Japan", lat: 35.68, lng: 139.69 },
     { date: "2026-07", venue: "Academy of Management Annual Meeting (AOM 2026)", title: "When Code Writes the Coder: The Delegation-Validation Trap in Vibe Coding", authors: "Boussioux, Zhao*, Cho", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
