@@ -485,8 +485,9 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   display: flex; align-items: center; justify-content: center;
   padding: 40px;
   opacity: 0; pointer-events: none;
-  transition: opacity .3s;
+  transition: opacity .35s;
   backdrop-filter: blur(6px);
+  perspective: 1800px;
 }
 .paper-modal.open { opacity: 1; pointer-events: auto; }
 .paper-modal-inner {
@@ -494,12 +495,19 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   max-width: 720px; width: 100%; max-height: 85vh; overflow-y: auto;
   padding: 56px;
   position: relative;
-  transform: translateY(30px) rotate(-0.5deg);
-  transition: transform .4s cubic-bezier(.2,.9,.1,1);
+  transform-origin: left center;
+  transform: rotateY(-82deg) translateZ(0);
+  transition: transform .7s cubic-bezier(.2,.85,.2,1), box-shadow .7s;
   box-shadow: 0 40px 100px rgba(0,0,0,.4);
+  backface-visibility: hidden;
 }
 [data-mode="night"] .paper-modal-inner { background: #1F1E1A; color: var(--ink); }
-.paper-modal.open .paper-modal-inner { transform: none; }
+.paper-modal.open .paper-modal-inner {
+  transform: rotateY(0deg) translateZ(0);
+  box-shadow:
+    -24px 30px 60px rgba(0,0,0,.32),
+    0 40px 100px rgba(0,0,0,.4);
+}
 
 .paper-modal-inner::before {
   content: ""; position: absolute; top: 0; right: 0;
