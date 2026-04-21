@@ -496,17 +496,18 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   padding: 56px;
   position: relative;
   transform-origin: left center;
-  transform: rotateY(-82deg) translateZ(0);
-  transition: transform .7s cubic-bezier(.2,.85,.2,1), box-shadow .7s;
-  box-shadow: 0 40px 100px rgba(0,0,0,.4);
-  backface-visibility: hidden;
-}
-[data-mode="night"] .paper-modal-inner { background: #1F1E1A; color: var(--ink); }
-.paper-modal.open .paper-modal-inner {
-  transform: rotateY(0deg) translateZ(0);
   box-shadow:
     -24px 30px 60px rgba(0,0,0,.32),
     0 40px 100px rgba(0,0,0,.4);
+  backface-visibility: hidden;
+  animation: modalBookOpen .75s cubic-bezier(.2,.85,.2,1) both;
+}
+[data-mode="night"] .paper-modal-inner { background: #1F1E1A; color: var(--ink); }
+
+@keyframes modalBookOpen {
+  0%   { transform: rotateY(-82deg); box-shadow: 0 10px 30px rgba(0,0,0,.2); }
+  60%  { transform: rotateY(6deg);   box-shadow: -30px 40px 80px rgba(0,0,0,.38), 0 40px 100px rgba(0,0,0,.4); }
+  100% { transform: rotateY(0);      box-shadow: -24px 30px 60px rgba(0,0,0,.32), 0 40px 100px rgba(0,0,0,.4); }
 }
 
 .paper-modal-inner::before {
