@@ -170,9 +170,12 @@ function Honors() {
         </ul>
       </div>
 
-      {/* Institutional honors: Temple in its own column, UConn + UoN stacked */}
+      {/* Institutional honors: FIU + Temple stacked left, UConn + UoN stacked right */}
       <div className="honors-institutions reveal">
-        <HonorBlock label="Temple University" items={h.temple}/>
+        <div className="honors-col-stack">
+          <HonorBlock label="Florida International University" items={h.fiu}/>
+          <HonorBlock label="Temple University" items={h.temple}/>
+        </div>
         <div className="honors-col-stack">
           <HonorBlock label="University of Connecticut" items={h.uconn}/>
           <HonorBlock label="University of Nottingham" items={h.nottingham}/>

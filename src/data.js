@@ -233,7 +233,6 @@ window.CV = {
     researchGrants: [
       "AIS Distinguished Member (2025)",
       "Google Cloud Research Credits ($5,000)",
-      "Dean's Office Travel Grant ($2,000)",
       "Google Career Launchpad Program ($5,000)",
       "AIS Entrepreneurial Innovation Fellowship, Kauffman Foundation ($6,500)",
       "Best ERF Paper Award, AMCIS (2025)",
@@ -247,6 +246,9 @@ window.CV = {
       "NSF Travel Funding (Grant #2328, $1,024)",
       "Syntheticusers.com Research Grant ($6,000)",
       "Top 25% ERF Paper, AMCIS (2023)",
+    ],
+    fiu: [
+      "Dean's Office Travel Grant (2026) — $2,000",
     ],
     temple: [
       "2nd RAIS Symposium Award (2026) — $2,500",
