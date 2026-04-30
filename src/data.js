@@ -232,6 +232,8 @@ window.CV = {
   honors: {
     researchGrants: [
       "AIS Distinguished Member (2025)",
+      "Google Cloud Research Credits ($5,000)",
+      "Dean's Office Travel Grant ($2,000)",
       "Google Career Launchpad Program ($5,000)",
       "AIS Entrepreneurial Innovation Fellowship, Kauffman Foundation ($6,500)",
       "Best ERF Paper Award, AMCIS (2025)",
