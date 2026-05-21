@@ -150,6 +150,7 @@ body::before {
   z-index: 1;
   overflow: visible;
 }
+.miami-scene + .hero-bottom { margin-top: 0; }
 .miami-scene svg {
   width: 100%;
   height: auto;
