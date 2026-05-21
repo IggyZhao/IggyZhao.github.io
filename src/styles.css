@@ -158,7 +158,6 @@ body::before {
   overflow: visible;
 }
 /* Static silhouettes — dark teal */
-.ms-skyline-back rect { fill: var(--teal-soft); opacity: .38; }
 .ms-skyline rect,
 .ms-skyline path,
 .ms-skyline circle { fill: var(--teal); }
@@ -166,6 +165,9 @@ body::before {
 .ms-palm-trunk { stroke: var(--teal); stroke-width: 2; fill: none; stroke-linecap: round; }
 .ms-palm-frond { fill: var(--teal); }
 .ms-palm-coconut { fill: var(--teal); opacity: .85; }
+.ms-umb-canopy { fill: var(--teal); }
+.ms-umb-top { fill: var(--teal); }
+.ms-umb-pole { stroke: var(--teal); stroke-linecap: round; }
 .ms-water rect { fill: var(--teal-soft); opacity: .28; }
 .ms-wave { stroke: var(--teal); fill: none; }
 .ms-wave-1 { stroke-width: 1.2; opacity: .5; }
@@ -193,6 +195,8 @@ body::before {
 [data-mode="night"] .ms-skyline circle,
 [data-mode="night"] .ms-palm-frond,
 [data-mode="night"] .ms-palm-coconut,
+[data-mode="night"] .ms-umb-canopy,
+[data-mode="night"] .ms-umb-top,
 [data-mode="night"] .ms-yacht-hull,
 [data-mode="night"] .ms-yacht-deck,
 [data-mode="night"] .ms-yacht-cabin,
@@ -200,6 +204,7 @@ body::before {
 [data-mode="night"] .ms-yacht-flag { fill: var(--teal-soft); }
 [data-mode="night"] .ms-skyline line,
 [data-mode="night"] .ms-palm-trunk,
+[data-mode="night"] .ms-umb-pole,
 [data-mode="night"] .ms-yacht-mast,
 [data-mode="night"] .ms-wave { stroke: var(--teal-soft); }
 

@@ -105,15 +105,6 @@ function Hero3D() {
 }
 
 function MiamiScene() {
-  // Background distant skyline — small, faint
-  const backRow = [
-    [60,14,22],[76,12,18],[90,16,26],[108,12,20],[122,14,24],[138,16,28],
-    [156,12,22],[170,16,30],[188,14,26],[204,18,32],[224,14,26],[240,16,28],
-    [258,12,22],[274,18,30],[294,14,24],[820,14,24],[836,16,28],[854,12,22],
-    [868,18,30],[888,14,26],[904,16,28],[922,14,24],[938,18,32],[958,14,26],
-    [974,12,22],[988,16,28],[1006,14,24],[1022,18,30],[1042,14,26],[1058,12,22],
-    [1072,16,28],[1090,14,24],[1106,16,28],[1124,12,22],[1138,14,24],[1154,12,20]
-  ];
   // Foreground Miami skyline — denser, varied, with iconic treatments
   const front = [
     {x:300,w:14,h:28},{x:316,w:16,h:34},{x:334,w:12,h:26},
@@ -145,17 +136,35 @@ function MiamiScene() {
     {x:744,w:18,h:44},{x:764,w:14,h:38},{x:780,w:16,h:36, t:'antenna'},
     {x:798,w:12,h:30}
   ];
-  // Palms — smaller, more numerous
+  // Palms — clustered on left and right beaches
   const palms = [
-    {x:40,  h:48},
-    {x:72,  h:38},
-    {x:104, h:32},
-    {x:200, h:34},
-    {x:228, h:42},
-    {x:790, h:36},
-    {x:1080, h:44},
-    {x:1118, h:34},
-    {x:1148, h:40}
+    {x:30,  h:56},
+    {x:72,  h:42},
+    {x:118, h:48},
+    {x:172, h:38},
+    {x:222, h:52},
+    {x:266, h:36},
+    {x:830, h:40},
+    {x:872, h:54},
+    {x:932, h:42},
+    {x:992, h:48},
+    {x:1052, h:54},
+    {x:1108, h:40},
+    {x:1156, h:46}
+  ];
+  // Beach umbrellas — on left and right beaches, slight random tilts
+  const umbrellas = [
+    {x:54,  tilt:-8, size:12},
+    {x:96,  tilt: 5, size:11},
+    {x:148, tilt:-4, size:13},
+    {x:198, tilt: 6, size:11},
+    {x:248, tilt:-3, size:12},
+    {x:852, tilt: 5, size:12},
+    {x:908, tilt:-6, size:13},
+    {x:968, tilt: 4, size:11},
+    {x:1030,tilt:-5, size:12},
+    {x:1088,tilt: 7, size:13},
+    {x:1138,tilt:-3, size:11}
   ];
   // Fireworks — burst high, with launch trail from water
   const fireworks = [
@@ -197,13 +206,6 @@ function MiamiScene() {
                 ))}
               </g>
             </g>
-          ))}
-        </g>
-
-        {/* Distant background skyline */}
-        <g className="ms-skyline-back">
-          {backRow.map(([x, w, h], i) => (
-            <rect key={i} x={x} y={waterY - h} width={w} height={h}/>
           ))}
         </g>
 
@@ -257,7 +259,25 @@ function MiamiScene() {
           })}
         </g>
 
-        {/* Palm trees — smaller, more numerous */}
+        {/* Beach umbrellas — flank the central skyline */}
+        <g className="ms-umbrellas">
+          {umbrellas.map((u, i) => {
+            const r = u.size;
+            return (
+              <g key={i} transform={`translate(${u.x}, ${waterY}) rotate(${u.tilt})`}>
+                {/* Canopy dome */}
+                <path className="ms-umb-canopy"
+                      d={`M ${-r} 0 Q ${-r} ${-r*0.85} 0 ${-r} Q ${r} ${-r*0.85} ${r} 0 Q ${r*0.5} ${-r*0.15} 0 0 Q ${-r*0.5} ${-r*0.15} ${-r} 0 Z`}/>
+                {/* Topper */}
+                <circle className="ms-umb-top" cx="0" cy={-r} r="1.2"/>
+                {/* Pole */}
+                <line className="ms-umb-pole" x1="0" y1="0" x2="0" y2={r*1.5} strokeWidth="1.3"/>
+              </g>
+            );
+          })}
+        </g>
+
+        {/* Palm trees — clustered on the beaches */}
         <g className="ms-palms">
           {palms.map((p, i) => {
             const h = p.h;
