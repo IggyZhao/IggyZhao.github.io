@@ -74,12 +74,12 @@ window.CV = {
       id: "vibecoding",
       authors: "Boussioux, L., Zhao, Z., Cho, K.",
       title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding",
-      presented: ["Wharton AI and the Future of Work 2026", "AOM 2026"],
+      presented: ["Wharton AI and the Future of Work 2026", "AOM 2026", "INFORMS 2026"],
     },
     {
       id: "generativity",
       authors: "Boussioux, L., Zhao, Z., Cho, K.",
-      title: "The Generativity Paradox: When Eliminating Creation Barriers Deepens Adoption Inequality in AI Agent Ecosystems",
+      title: "The Anatomy of an Agentic Skill",
       presented: ["Wharton AI and the Future of Work 2026", "SCECR 2026"],
     },
     {
@@ -90,9 +90,9 @@ window.CV = {
     },
     {
       id: "ambient",
-      authors: "Miri, A., Hertelendy, A., Zhao, Z., Cho, K., & Doherty, R.",
-      title: "When AI Slows You Down: Ambient Documentation and ED Throughput Across 362,000 Visits",
-      presented: ["DSI 2026"],
+      authors: "Hertelendy, A., Zhao, Z., Cho, K., & Li, J.",
+      title: "From Author to Auditor: The Verification Tax in Clinical Documentation",
+      presented: ["DSI 2026", "INFORMS 2026"],
     },
   ],
 
@@ -108,13 +108,15 @@ window.CV = {
 
   // Presentations with geography for the map. Each has its own title.
   presentations: [
-    { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "When AI Slows You Down: Ambient Documentation and ED Throughput Across 362,000 Visits", authors: "Miri, Hertelendy, Zhao*, Cho, Doherty", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "From Author to Auditor: The Verification Tax in Clinical Documentation", authors: "Hertelendy, Zhao*, Cho, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration", authors: "Zhao*, Cho, Aaltonen, Straub", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "From Author to Auditor: The Verification Tax in Clinical Documentation", authors: "Hertelendy, Zhao*, Cho, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux, Zhao*, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "Timing Matters: AI Response Time in Healthcare Decision-Making", authors: "Yang*, Zhao, Cho, Ayabakan", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
-    { date: "2026-06", venue: "Statistical Challenges in eCommerce Research (SCECR 2026)", title: "The Generativity Paradox: When Eliminating Creation Barriers Deepens Adoption Inequality in AI Agent Ecosystems", authors: "Boussioux, Zhao, Cho*", city: "Tokyo, Japan", lat: 35.68, lng: 139.69 },
-    { date: "2026-07", venue: "Academy of Management Annual Meeting (AOM 2026)", title: "When Code Writes the Coder: The Delegation-Validation Trap in Vibe Coding", authors: "Boussioux, Zhao*, Cho", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
-    { date: "2026-05", venue: "Wharton AI and the Future of Work Conference", title: "When Code Writes the Coder: The Delegation-Validation Trap in Vibe Coding", authors: "Boussioux, Zhao, Cho*", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
-    { date: "2026-05", venue: "Wharton AI and the Future of Work Conference", title: "The Generativity Paradox: When Eliminating Creation Barriers Deepens Adoption Inequality in AI Agent Ecosystems", authors: "Boussioux, Zhao, Cho*", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
+    { date: "2026-06", venue: "Statistical Challenges in eCommerce Research (SCECR 2026)", title: "The Anatomy of an Agentic Skill", authors: "Boussioux, Zhao, Cho*", city: "Tokyo, Japan", lat: 35.68, lng: 139.69 },
+    { date: "2026-07", venue: "Academy of Management Annual Meeting (AOM 2026)", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux, Zhao*, Cho", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
+    { date: "2026-05", venue: "Wharton AI and the Future of Work Conference", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux, Zhao, Cho*", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
+    { date: "2026-05", venue: "Wharton AI and the Future of Work Conference", title: "The Anatomy of an Agentic Skill", authors: "Boussioux, Zhao, Cho*", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
     { date: "2026-05", venue: "Conference on Health IT and Analytics (CHITA)", title: "How Response Time Shapes Patient Decision-Making Using Generative AI–Based Health Agent", authors: "Yang*, Zhao, Cho, Ayabakan", city: "Washington, D.C.", lat: 38.9, lng: -77.04 },
     { date: "2026-05", venue: "Workshop “Theorizing Data and AI”", title: "How Knowledge Workers Create and Evaluate Solutions Coming from Generative Artificial Intelligence", authors: "Zhao, Cho, Aaltonen*, Straub", city: "London, UK", lat: 51.5, lng: -0.12 },
     { date: "2025-12", venue: "International Conference on Information Systems (ICIS 2025)", title: "Timing Matters: AI Response Time in Healthcare Decision-Making — TREO Talk", authors: "Yang*, Zhao, Cho, Ayabakan", city: "Nashville, TN", lat: 36.16, lng: -86.78 },
@@ -220,18 +222,10 @@ window.CV = {
     },
   ],
 
-  studentFeedback: [
-    "The hands-on exposure to AI tools and workflows has been valuable, and I appreciate the instructor's enthusiasm and passion for the subject. The course does a good job introducing a wide range of AI applications, which helps build awareness of what is possible and keeps the content engaging.",
-    "This was a very interesting and well-put introduction to Data Science and I believe it's a necessary class for MIS majors and every other student. The class includes a lot of topics varying from big data to the AI used in a Tesla. This course should be more recommended in the major.",
-    "Really really good, I learned a lot from this course that will be useful in my professional career and enjoyed coming to class everyday.",
-    "Professor Zhao creates an inclusive and supportive environment where all students, regardless of background, feel valued and respected. Her dedication to inclusion makes for a richer and more connected classroom experience.",
-    "This course offers an engaging and enriching learning experience, marked by thoughtful and inclusive instruction. The curriculum is well-structured, blending diverse perspectives with practical applications, which makes complex concepts accessible and relevant.",
-    "The In-Class Activities provided a great tool to better learn, understand, and execute the knowledge I obtained from this course. The hands-on activities and constant support overall benefitted my learning experience.",
-  ],
-
   honors: {
     researchGrants: [
       "AIS Distinguished Member (2025)",
+      "Outstanding Editor, Information Technology for Development, Awarded by AIS",
       "Google Cloud Research Credits ($5,000)",
       "Google Career Launchpad Program ($5,000)",
       "AIS Entrepreneurial Innovation Fellowship, Kauffman Foundation ($6,500)",
@@ -248,7 +242,7 @@ window.CV = {
       "Top 25% ERF Paper, AMCIS (2023)",
     ],
     fiu: [
-      "Dean's Office Travel Grant (2026) — $2,000",
+      "Dean's Office Travel Funding (2026) — $2,000",
     ],
     temple: [
       "2nd RAIS Symposium Award (2026) — $2,500",

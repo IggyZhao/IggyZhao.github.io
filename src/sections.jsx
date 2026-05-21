@@ -28,12 +28,12 @@ function About() {
         <div className="pillar">
           <div className="pillar-num">02</div>
           <div className="pillar-head">AI in the Future of Work</div>
-          <div className="pillar-body">Empirical studies in <em>software development</em>, <em>knowledge search</em>, and <em>clinical settings</em> where AI augments or replaces expertise.</div>
+          <div className="pillar-body">Mixed method studies in <em>coding</em>, <em>information searching</em>, and <em>clinical decision making</em> where AI augments or replaces decision making.</div>
         </div>
         <div className="pillar">
           <div className="pillar-num">03</div>
           <div className="pillar-head">AI Index &amp; Methods</div>
-          <div className="pillar-body">New indicators and methods for measuring what AI systems actually do — beyond benchmarks, inside real workflows.</div>
+          <div className="pillar-body">New indicators and methods for measuring what AI systems actually do.</div>
         </div>
       </div>
 
@@ -127,11 +127,6 @@ function Teaching() {
         ))}
       </div>
 
-      <div className="feedback-grid">
-        {window.CV.studentFeedback.map((q, i) => (
-          <div key={i} className="feedback-card reveal"><p>{q}</p></div>
-        ))}
-      </div>
     </section>
   );
 }
