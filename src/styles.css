@@ -140,6 +140,96 @@ body::before {
 }
 .hero-meta { font-family: var(--mono); font-size: 11px; text-align: right; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); line-height: 1.9; }
 
+/* —— Miami silhouette scene (inside hero-left) —— */
+.miami-scene {
+  width: 100%;
+  margin: 32px 0 16px;
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+}
+.miami-scene svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 260px;
+  overflow: visible;
+}
+/* Static silhouettes — dark teal */
+.ms-skyline-back rect { fill: var(--teal-soft); opacity: .42; }
+.ms-skyline rect,
+.ms-skyline path,
+.ms-skyline circle { fill: var(--teal); }
+.ms-skyline line { stroke: var(--teal); }
+.ms-palm-trunk { stroke: var(--teal); stroke-width: 3; fill: none; stroke-linecap: round; }
+.ms-palm-frond { fill: var(--teal); }
+.ms-palm-coconut { fill: var(--teal); opacity: .85; }
+.ms-water rect { fill: var(--teal-soft); opacity: .32; }
+.ms-wave { stroke: var(--teal); fill: none; }
+.ms-wave-1 { stroke-width: 1.3; opacity: .55; }
+.ms-wave-2 { stroke-width: 1; opacity: .32; }
+.ms-yacht-hull,
+.ms-yacht-cabin,
+.ms-yacht-roof,
+.ms-yacht-flag { fill: var(--teal); }
+.ms-yacht-mast { stroke: var(--teal); }
+
+/* Night mode lifts the silhouettes a touch */
+[data-mode="night"] .ms-skyline rect,
+[data-mode="night"] .ms-skyline path,
+[data-mode="night"] .ms-skyline circle,
+[data-mode="night"] .ms-palm-frond,
+[data-mode="night"] .ms-palm-coconut,
+[data-mode="night"] .ms-yacht-hull,
+[data-mode="night"] .ms-yacht-cabin,
+[data-mode="night"] .ms-yacht-roof,
+[data-mode="night"] .ms-yacht-flag { fill: var(--teal-soft); }
+[data-mode="night"] .ms-skyline line,
+[data-mode="night"] .ms-palm-trunk,
+[data-mode="night"] .ms-yacht-mast,
+[data-mode="night"] .ms-wave { stroke: var(--teal-soft); }
+
+/* Fireworks — only color allowed */
+.ms-fw line {
+  stroke-width: 2;
+  stroke-dashoffset: var(--burst-len, 26);
+  opacity: 0;
+  animation: ms-burst 5s ease-out infinite;
+  animation-delay: var(--ms-delay, 0s);
+}
+.ms-fw circle {
+  fill: currentColor;
+  opacity: 0;
+  animation: ms-spark 5s ease-out infinite;
+  animation-delay: var(--ms-delay, 0s);
+}
+.ms-fw-amber     { color: var(--amber); }
+.ms-fw-amber     line { stroke: var(--amber); }
+.ms-fw-coral     { color: var(--coral); }
+.ms-fw-coral     line { stroke: var(--coral); }
+.ms-fw-sand      { color: var(--sand); }
+.ms-fw-sand      line { stroke: var(--sand); }
+.ms-fw-teal-soft { color: var(--teal-soft); }
+.ms-fw-teal-soft line { stroke: var(--teal-soft); }
+
+@keyframes ms-burst {
+  0%   { stroke-dashoffset: var(--burst-len, 26); opacity: 0; }
+  6%   { opacity: 1; }
+  40%  { stroke-dashoffset: 0; opacity: 1; }
+  65%  { stroke-dashoffset: 0; opacity: 0; }
+  100% { stroke-dashoffset: var(--burst-len, 26); opacity: 0; }
+}
+@keyframes ms-spark {
+  0%, 100% { opacity: 0; }
+  38%      { opacity: 0; }
+  48%      { opacity: 1; }
+  62%      { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ms-fw line, .ms-fw circle { animation: none; opacity: .9; stroke-dashoffset: 0; }
+}
+
 /* —— 3D portrait scene —— */
 .hero-scene {
   position: relative;
@@ -1192,6 +1282,8 @@ footer {
   .scene-chip { font-size: 9px; padding: 6px 10px; letter-spacing: .1em; }
   .scene-chip.c2 { left: -8px; }
   .scene-chip.c3 { right: 0; }
+  .miami-scene { margin: 18px 0 4px; }
+  .miami-scene svg { max-height: 150px; }
 
   /* Marquee */
   .marquee { padding: 16px 0; }

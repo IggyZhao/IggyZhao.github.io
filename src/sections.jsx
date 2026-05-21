@@ -28,7 +28,7 @@ function About() {
         <div className="pillar">
           <div className="pillar-num">02</div>
           <div className="pillar-head">AI in the Future of Work</div>
-          <div className="pillar-body">Mixed method studies in <em>coding</em>, <em>information searching</em>, and <em>clinical decision making</em> where AI augments or replaces decision making.</div>
+          <div className="pillar-body">Mixed method studies in <em>coding</em>, <em>information searching</em>, and <em>clinical decision making</em> where AI shapes or transforms decision making.</div>
         </div>
         <div className="pillar">
           <div className="pillar-num">03</div>
