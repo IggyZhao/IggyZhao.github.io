@@ -64,7 +64,7 @@ function Hero3D() {
           </div>
 
           <h1 className="hero-title" ref={titleRef}>
-            <span className="row"><span className="shift" style={{fontSize: "140px"}}>Dr. Ziyi <em className="iggy-accent" style={{fontSize: "100px", color: "rgb(184, 116, 58)"}}>(Iggy)</em></span></span>
+            <span className="row"><span className="shift" style={{fontSize: "var(--name-main, 140px)"}}>Dr. Ziyi <em className="iggy-accent" style={{fontSize: "var(--name-iggy, 100px)", color: "rgb(184, 116, 58)"}}>(Iggy)</em></span></span>
             <span className="row"><span className="shift">Zhao</span></span>
           </h1>
         </div>

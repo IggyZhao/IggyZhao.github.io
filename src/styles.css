@@ -1299,10 +1299,11 @@ footer {
 
 /* ========== Phone (<=640px) ========== */
 @media (max-width: 640px) {
-  /* Topbar */
-  .topbar { padding: 14px 18px; font-size: 10px; letter-spacing: .1em; }
-  .topbar .mark { font-size: 18px; }
-  .topbar .right { gap: 14px; }
+  /* Topbar — hide left nav on phone to prevent overflow */
+  .topbar { padding: 14px 16px; font-size: 10px; letter-spacing: .1em; grid-template-columns: auto 1fr; }
+  .topbar .left { display: none; }
+  .topbar .mark { font-size: 16px; }
+  .topbar .right { gap: 14px; justify-content: flex-end; }
 
   /* Section framing */
   section.block { padding: 80px 20px; }
@@ -1324,8 +1325,11 @@ footer {
   .scene-chip { font-size: 9px; padding: 6px 10px; letter-spacing: .1em; }
   .scene-chip.c2 { left: -8px; }
   .scene-chip.c3 { right: 0; }
-  .miami-scene { margin: 18px 0 4px; }
-  .miami-scene svg { max-height: 150px; }
+  /* Override inline title sizes on mobile */
+  .hero-title { --name-main: clamp(48px, 14vw, 72px); --name-iggy: clamp(34px, 10vw, 52px); }
+  .miami-scene { margin: 12px 0 0; }
+  .miami-scene svg { max-height: 170px; }
+  .ms-chairs { display: none; }
 
   /* Marquee */
   .marquee { padding: 16px 0; }
@@ -1466,7 +1470,7 @@ footer {
 
 /* ========== Small phone (<=400px) ========== */
 @media (max-width: 400px) {
-  .hero-title { font-size: clamp(42px, 13vw, 58px); }
+  .hero-title { font-size: clamp(42px, 13vw, 58px); --name-main: clamp(38px, 12vw, 56px); --name-iggy: clamp(28px, 9vw, 42px); }
   .hero-title .phd { display: none; }
   .section-title { font-size: 30px; }
   .lead-statement { font-size: 22px; }
