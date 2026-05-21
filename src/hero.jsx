@@ -105,125 +105,205 @@ function Hero3D() {
 }
 
 function MiamiScene() {
-  const fireworks = [
-    { cx: 150, cy: 60, color: "amber",     delay: 0.0, size: 26 },
-    { cx: 360, cy: 38, color: "coral",     delay: 1.4, size: 22 },
-    { cx: 560, cy: 70, color: "sand",      delay: 0.7, size: 28 },
-    { cx: 780, cy: 42, color: "teal-soft", delay: 2.1, size: 24 },
-    { cx: 980, cy: 64, color: "amber",     delay: 2.9, size: 26 },
+  // Background distant skyline — small, faint
+  const backRow = [
+    [60,14,22],[76,12,18],[90,16,26],[108,12,20],[122,14,24],[138,16,28],
+    [156,12,22],[170,16,30],[188,14,26],[204,18,32],[224,14,26],[240,16,28],
+    [258,12,22],[274,18,30],[294,14,24],[820,14,24],[836,16,28],[854,12,22],
+    [868,18,30],[888,14,26],[904,16,28],[922,14,24],[938,18,32],[958,14,26],
+    [974,12,22],[988,16,28],[1006,14,24],[1022,18,30],[1042,14,26],[1058,12,22],
+    [1072,16,28],[1090,14,24],[1106,16,28],[1124,12,22],[1138,14,24],[1154,12,20]
   ];
+  // Foreground Miami skyline — denser, varied, with iconic treatments
+  const front = [
+    {x:300,w:14,h:28},{x:316,w:16,h:34},{x:334,w:12,h:26},
+    {x:348,w:18,h:40, t:'antenna'},
+    // Freedom Tower-style cupola
+    {x:368,w:20,h:46, t:'freedom'},
+    {x:390,w:14,h:38},{x:406,w:16,h:42},
+    // Wells Fargo sloped roof
+    {x:424,w:22,h:54, t:'sloped'},
+    // Bank of America Tower w/ antenna
+    {x:448,w:18,h:62, t:'antenna'},
+    {x:468,w:14,h:48},{x:484,w:16,h:52},
+    // Southeast Financial
+    {x:502,w:20,h:64},
+    {x:524,w:14,h:50},{x:540,w:16,h:54, t:'antenna'},
+    // Panorama Tower — Miami's tallest, sloped crown + spire
+    {x:558,w:24,h:88, t:'panorama'},
+    // Four Seasons Brickell
+    {x:584,w:16,h:70, t:'antenna'},
+    // Brickell Heights twin
+    {x:602,w:20,h:62, t:'twin'},
+    {x:624,w:14,h:54},
+    // Echo Brickell
+    {x:640,w:18,h:66},
+    {x:660,w:14,h:48},
+    // SLS Lux — angular
+    {x:676,w:18,h:52, t:'sloped'},
+    {x:696,w:14,h:42},{x:712,w:16,h:46},{x:730,w:12,h:36},
+    {x:744,w:18,h:44},{x:764,w:14,h:38},{x:780,w:16,h:36, t:'antenna'},
+    {x:798,w:12,h:30}
+  ];
+  // Palms — smaller, more numerous
+  const palms = [
+    {x:40,  h:48},
+    {x:72,  h:38},
+    {x:104, h:32},
+    {x:200, h:34},
+    {x:228, h:42},
+    {x:790, h:36},
+    {x:1080, h:44},
+    {x:1118, h:34},
+    {x:1148, h:40}
+  ];
+  // Fireworks — burst high, with launch trail from water
+  const fireworks = [
+    { cx: 120, cy: 10,  color: "amber",     delay: 0.0, size: 24 },
+    { cx: 310, cy: -18, color: "coral",     delay: 2.0, size: 28 },
+    { cx: 540, cy: 4,   color: "sand",      delay: 1.0, size: 26 },
+    { cx: 780, cy: -10, color: "teal-soft", delay: 3.2, size: 30 },
+    { cx: 990, cy: 16,  color: "amber",     delay: 4.4, size: 22 },
+  ];
+  const waterY = 240;
   return (
     <div className="miami-scene" aria-hidden="true">
-      <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
-        {/* Fireworks — only colorful element */}
+      <svg viewBox="0 -60 1200 320" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+        {/* Fireworks — only colorful element; rise from water then burst */}
         <g className="ms-fireworks">
           {fireworks.map((fw, i) => (
-            <g key={i}
-               className={`ms-fw ms-fw-${fw.color}`}
-               transform={`translate(${fw.cx}, ${fw.cy})`}
-               style={{ '--ms-delay': `${fw.delay}s`, '--burst-len': fw.size }}>
-              {[...Array(12)].map((_, j) => (
-                <line key={`l${j}`}
-                      x1="0" y1="0" x2="0" y2={-fw.size}
-                      transform={`rotate(${j * 30})`}
-                      strokeLinecap="round"
-                      style={{ strokeDasharray: fw.size }}/>
-              ))}
-              {[...Array(12)].map((_, j) => (
-                <circle key={`d${j}`}
-                        cx="0" cy={-fw.size} r="1.6"
-                        transform={`rotate(${j * 30})`}/>
-              ))}
+            <g key={i} className={`ms-fw ms-fw-${fw.color}`}
+               style={{
+                 '--ms-delay': `${fw.delay}s`,
+                 '--burst-len': fw.size,
+                 '--trail-len': waterY - fw.cy
+               }}>
+              {/* Launch trail */}
+              <line className="ms-fw-trail"
+                    x1={fw.cx} y1={waterY} x2={fw.cx} y2={fw.cy}
+                    strokeLinecap="round"
+                    style={{ strokeDasharray: waterY - fw.cy }}/>
+              {/* Burst */}
+              <g className="ms-fw-burst" transform={`translate(${fw.cx}, ${fw.cy})`}>
+                {[...Array(12)].map((_, j) => (
+                  <line key={`l${j}`} x1="0" y1="0" x2="0" y2={-fw.size}
+                        transform={`rotate(${j * 30})`}
+                        strokeLinecap="round"
+                        style={{ strokeDasharray: fw.size }}/>
+                ))}
+                {[...Array(12)].map((_, j) => (
+                  <circle key={`d${j}`} cx="0" cy={-fw.size} r="1.4"
+                          transform={`rotate(${j * 30})`}/>
+                ))}
+              </g>
             </g>
           ))}
         </g>
 
-        {/* Distant skyline — lighter teal */}
+        {/* Distant background skyline */}
         <g className="ms-skyline-back">
-          <rect x="210" y="200" width="32" height="80"/>
-          <rect x="242" y="188" width="34" height="92"/>
-          <rect x="276" y="178" width="26" height="102"/>
-          <rect x="302" y="195" width="38" height="85"/>
-          <rect x="340" y="172" width="32" height="108"/>
-          <rect x="372" y="190" width="26" height="90"/>
-          <rect x="398" y="180" width="38" height="100"/>
-          <rect x="436" y="198" width="30" height="82"/>
-          <rect x="780" y="195" width="30" height="85"/>
-          <rect x="810" y="180" width="38" height="100"/>
-          <rect x="848" y="195" width="28" height="85"/>
-          <rect x="876" y="186" width="34" height="94"/>
-          <rect x="910" y="200" width="28" height="80"/>
-          <rect x="938" y="190" width="32" height="90"/>
+          {backRow.map(([x, w, h], i) => (
+            <rect key={i} x={x} y={waterY - h} width={w} height={h}/>
+          ))}
         </g>
 
-        {/* Foreground CBD — varied tower silhouettes */}
+        {/* Foreground skyline with iconic Miami treatments */}
         <g className="ms-skyline">
-          {/* Tapered tower */}
-          <path d="M470 170 L470 280 L508 280 L508 170 L489 152 Z"/>
-          {/* Rect with antenna */}
-          <rect x="513" y="160" width="32" height="120"/>
-          <line x1="529" y1="160" x2="529" y2="138" strokeWidth="1.5"/>
-          {/* Tall slab */}
-          <rect x="550" y="140" width="42" height="140"/>
-          {/* Spire — Miami's tallest motif */}
-          <rect x="600" y="115" width="38" height="165"/>
-          <line x1="619" y1="115" x2="619" y2="86" strokeWidth="2"/>
-          <circle cx="619" cy="86" r="2"/>
-          {/* Step-back tower */}
-          <path d="M645 168 L645 280 L688 280 L688 168 L688 152 L678 152 L678 168 Z"/>
-          {/* Rect */}
-          <rect x="695" y="178" width="28" height="102"/>
-          {/* Pyramid-top tower */}
-          <path d="M728 175 L728 280 L772 280 L772 175 L750 156 Z"/>
+          {front.map((b, i) => {
+            const baseY = waterY - b.h;
+            const cx = b.x + b.w / 2;
+            if (b.t === 'panorama') {
+              return (
+                <g key={i}>
+                  <path d={`M${b.x} ${baseY + 10} L${b.x} ${waterY} L${b.x + b.w} ${waterY} L${b.x + b.w} ${baseY + 10} L${cx} ${baseY} Z`}/>
+                  <line x1={cx} y1={baseY} x2={cx} y2={baseY - 14} strokeWidth="1.5"/>
+                  <circle cx={cx} cy={baseY - 14} r="1.5"/>
+                </g>
+              );
+            }
+            if (b.t === 'sloped') {
+              return (
+                <path key={i} d={`M${b.x} ${baseY + 8} L${cx} ${baseY} L${b.x + b.w} ${baseY + 8} L${b.x + b.w} ${waterY} L${b.x} ${waterY} Z`}/>
+              );
+            }
+            if (b.t === 'twin') {
+              const gap = 3;
+              return (
+                <g key={i}>
+                  <rect x={b.x} y={baseY + 4} width={(b.w - gap) / 2} height={b.h - 4}/>
+                  <rect x={b.x + (b.w + gap) / 2} y={baseY} width={(b.w - gap) / 2} height={b.h}/>
+                </g>
+              );
+            }
+            if (b.t === 'freedom') {
+              return (
+                <g key={i}>
+                  <rect x={b.x} y={baseY + 10} width={b.w} height={b.h - 10}/>
+                  <rect x={cx - 5} y={baseY + 4} width="10" height="7"/>
+                  <rect x={cx - 2.5} y={baseY - 1} width="5" height="5"/>
+                  <line x1={cx} y1={baseY - 1} x2={cx} y2={baseY - 8} strokeWidth="1"/>
+                </g>
+              );
+            }
+            if (b.t === 'antenna') {
+              return (
+                <g key={i}>
+                  <rect x={b.x} y={baseY} width={b.w} height={b.h}/>
+                  <line x1={cx} y1={baseY} x2={cx} y2={baseY - 10} strokeWidth="1"/>
+                </g>
+              );
+            }
+            return <rect key={i} x={b.x} y={baseY} width={b.w} height={b.h}/>;
+          })}
         </g>
 
-        {/* Palm trees — silhouettes */}
+        {/* Palm trees — smaller, more numerous */}
         <g className="ms-palms">
-          {/* Tall palm — front left */}
-          <g transform="translate(95, 280)">
-            <path className="ms-palm-trunk" d="M0 0 Q -2 -32, 1 -60 Q 4 -90, 0 -115"/>
-            <path className="ms-palm-frond" d="M0 -115 C -20 -118, -45 -115, -68 -105 C -50 -112, -32 -116, -10 -118 Z"/>
-            <path className="ms-palm-frond" d="M0 -115 C 20 -118, 45 -115, 68 -105 C 50 -112, 32 -116, 10 -118 Z"/>
-            <path className="ms-palm-frond" d="M0 -115 C -15 -132, -34 -148, -56 -152 C -40 -140, -22 -128, -6 -120 Z"/>
-            <path className="ms-palm-frond" d="M0 -115 C 15 -132, 34 -148, 56 -152 C 40 -140, 22 -128, 6 -120 Z"/>
-            <path className="ms-palm-frond" d="M0 -115 C -6 -140, -2 -158, 0 -168 C 2 -158, 6 -140, 0 -115 Z"/>
-            <circle className="ms-palm-coconut" cx="-2" cy="-112" r="2.5"/>
-            <circle className="ms-palm-coconut" cx="3" cy="-110" r="2.2"/>
-          </g>
-          {/* Medium palm — middle */}
-          <g transform="translate(178, 280)">
-            <path className="ms-palm-trunk" d="M0 0 Q -1.5 -26, 0 -52 Q 2 -78, 0 -94"/>
-            <path className="ms-palm-frond" d="M0 -94 C -18 -97, -38 -94, -56 -85 C -42 -90, -26 -95, -8 -96 Z"/>
-            <path className="ms-palm-frond" d="M0 -94 C 18 -97, 38 -94, 56 -85 C 42 -90, 26 -95, 8 -96 Z"/>
-            <path className="ms-palm-frond" d="M0 -94 C -12 -110, -28 -122, -45 -125 C -32 -115, -18 -105, -5 -98 Z"/>
-            <path className="ms-palm-frond" d="M0 -94 C 12 -110, 28 -122, 45 -125 C 32 -115, 18 -105, 5 -98 Z"/>
-            <path className="ms-palm-frond" d="M0 -94 C -5 -116, -2 -132, 0 -138 C 2 -132, 5 -116, 0 -94 Z"/>
-          </g>
-          {/* Right-side palm */}
-          <g transform="translate(1080, 280)">
-            <path className="ms-palm-trunk" d="M0 0 Q -2 -30, 1 -58 Q 3 -86, 0 -106"/>
-            <path className="ms-palm-frond" d="M0 -106 C -20 -110, -42 -106, -62 -96 C -46 -103, -28 -108, -8 -110 Z"/>
-            <path className="ms-palm-frond" d="M0 -106 C 20 -110, 42 -106, 62 -96 C 46 -103, 28 -108, 8 -110 Z"/>
-            <path className="ms-palm-frond" d="M0 -106 C -14 -124, -32 -140, -50 -142 C -36 -130, -20 -118, -5 -110 Z"/>
-            <path className="ms-palm-frond" d="M0 -106 C 14 -124, 32 -140, 50 -142 C 36 -130, 20 -118, 5 -110 Z"/>
-            <path className="ms-palm-frond" d="M0 -106 C -6 -132, -2 -150, 0 -156 C 2 -150, 6 -132, 0 -106 Z"/>
-          </g>
+          {palms.map((p, i) => {
+            const h = p.h;
+            const f = (s, t) => `${s * h}`;
+            return (
+              <g key={i} transform={`translate(${p.x}, ${waterY})`}>
+                <path className="ms-palm-trunk" d={`M0 0 Q -1 ${-h*0.4}, 0.5 ${-h*0.7} Q 1.5 ${-h*0.9}, 0 ${-h}`}/>
+                <path className="ms-palm-frond" d={`M0 ${-h} C ${-h*0.2} ${-h-2}, ${-h*0.45} ${-h+1}, ${-h*0.6} ${-h+6} C ${-h*0.4} ${-h+1}, ${-h*0.18} ${-h-1}, 0 ${-h-2} Z`}/>
+                <path className="ms-palm-frond" d={`M0 ${-h} C ${h*0.2} ${-h-2}, ${h*0.45} ${-h+1}, ${h*0.6} ${-h+6} C ${h*0.4} ${-h+1}, ${h*0.18} ${-h-1}, 0 ${-h-2} Z`}/>
+                <path className="ms-palm-frond" d={`M0 ${-h} C ${-h*0.15} ${-h-6}, ${-h*0.32} ${-h-12}, ${-h*0.45} ${-h-13} C ${-h*0.3} ${-h-7}, ${-h*0.15} ${-h-3}, 0 ${-h-2} Z`}/>
+                <path className="ms-palm-frond" d={`M0 ${-h} C ${h*0.15} ${-h-6}, ${h*0.32} ${-h-12}, ${h*0.45} ${-h-13} C ${h*0.3} ${-h-7}, ${h*0.15} ${-h-3}, 0 ${-h-2} Z`}/>
+                <path className="ms-palm-frond" d={`M0 ${-h} C -1.5 ${-h-8}, -0.5 ${-h-14}, 0 ${-h-16} C 0.5 ${-h-14}, 1.5 ${-h-8}, 0 ${-h} Z`}/>
+              </g>
+            );
+          })}
         </g>
 
         {/* Water band with subtle waves */}
         <g className="ms-water">
-          <rect x="0" y="280" width="1200" height="20"/>
-          <path className="ms-wave ms-wave-1" d="M0 282 Q 60 279, 120 282 T 240 282 T 360 282 T 480 282 T 600 282 T 720 282 T 840 282 T 960 282 T 1080 282 T 1200 282" fill="none"/>
-          <path className="ms-wave ms-wave-2" d="M0 290 Q 50 293, 100 290 T 200 290 T 300 290 T 400 290 T 500 290 T 600 290 T 700 290 T 800 290 T 900 290 T 1000 290 T 1100 290 T 1200 290" fill="none"/>
+          <rect x="0" y={waterY} width="1200" height="20"/>
+          <path className="ms-wave ms-wave-1" d={`M0 ${waterY+3} Q 50 ${waterY} 100 ${waterY+3} T 200 ${waterY+3} T 300 ${waterY+3} T 400 ${waterY+3} T 500 ${waterY+3} T 600 ${waterY+3} T 700 ${waterY+3} T 800 ${waterY+3} T 900 ${waterY+3} T 1000 ${waterY+3} T 1100 ${waterY+3} T 1200 ${waterY+3}`} fill="none"/>
+          <path className="ms-wave ms-wave-2" d={`M0 ${waterY+11} Q 40 ${waterY+14} 80 ${waterY+11} T 160 ${waterY+11} T 240 ${waterY+11} T 320 ${waterY+11} T 400 ${waterY+11} T 480 ${waterY+11} T 560 ${waterY+11} T 640 ${waterY+11} T 720 ${waterY+11} T 800 ${waterY+11} T 880 ${waterY+11} T 960 ${waterY+11} T 1040 ${waterY+11} T 1120 ${waterY+11} T 1200 ${waterY+11}`} fill="none"/>
         </g>
 
-        {/* Yacht */}
-        <g className="ms-yacht" transform="translate(870, 270)">
-          <path className="ms-yacht-hull" d="M-38 12 Q -42 4, -28 4 L 28 4 L 38 12 Z"/>
-          <path className="ms-yacht-cabin" d="M-18 -6 L 14 -6 L 18 4 L -22 4 Z"/>
-          <rect className="ms-yacht-roof" x="-10" y="-13" width="18" height="7"/>
-          <line className="ms-yacht-mast" x1="-2" y1="-30" x2="-2" y2="-13" strokeWidth="1.3"/>
-          <path className="ms-yacht-flag" d="M-2 -30 L 8 -27 L -2 -24 Z"/>
+        {/* Animated yacht — sails from right to left */}
+        <g className="ms-yacht">
+          {/* Lower hull */}
+          <path className="ms-yacht-hull" d="M-44 6 Q -50 -2, -34 -2 L 30 -2 L 48 6 L 42 12 L -38 12 Z"/>
+          {/* Mid deck */}
+          <path className="ms-yacht-deck" d="M-30 -8 L 24 -8 L 28 -2 L -34 -2 Z"/>
+          {/* Cabin */}
+          <rect className="ms-yacht-cabin" x="-20" y="-16" width="36" height="8"/>
+          {/* Bridge */}
+          <rect className="ms-yacht-bridge" x="-8" y="-24" width="16" height="8"/>
+          {/* Windows on cabin */}
+          <rect className="ms-yacht-window" x="-16" y="-13" width="4" height="3"/>
+          <rect className="ms-yacht-window" x="-10" y="-13" width="4" height="3"/>
+          <rect className="ms-yacht-window" x="-4" y="-13" width="4" height="3"/>
+          <rect className="ms-yacht-window" x="2" y="-13" width="4" height="3"/>
+          <rect className="ms-yacht-window" x="8" y="-13" width="4" height="3"/>
+          {/* Mast + flag */}
+          <line className="ms-yacht-mast" x1="0" y1="-40" x2="0" y2="-24" strokeWidth="1.2"/>
+          <path className="ms-yacht-flag" d="M0 -40 L 9 -37 L 0 -34 Z"/>
+          {/* Side antennas */}
+          <line className="ms-yacht-mast" x1="-14" y1="-24" x2="-14" y2="-31" strokeWidth="0.9"/>
+          <line className="ms-yacht-mast" x1="12" y1="-24" x2="12" y2="-30" strokeWidth="0.9"/>
         </g>
       </svg>
     </div>
