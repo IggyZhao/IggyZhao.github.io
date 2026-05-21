@@ -225,9 +225,9 @@ window.CV = {
   honors: {
     researchGrants: [
       "AIS Distinguished Member (2025)",
-      "Outstanding Editor, Information Technology for Development, Awarded by AIS",
-      "Google Cloud Research Credits ($5,000)",
-      "Google Career Launchpad Program ($5,000)",
+      "Outstanding Editor, Information Technology for Development, Awarded by AIS (2026)",
+      "Google Cloud Research Credits (2026) — $5,000",
+      "Google Career Launchpad Program (2026) — $5,000",
       "AIS Entrepreneurial Innovation Fellowship, Kauffman Foundation ($6,500)",
       "Best ERF Paper Award, AMCIS (2025)",
       "Advanced Practices Council of Society for Information Management ($5,000)",
