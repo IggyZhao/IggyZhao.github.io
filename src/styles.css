@@ -144,7 +144,7 @@ body::before {
 .miami-scene {
   width: 100%;
   margin-top: auto;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   pointer-events: none;
   position: relative;
   z-index: 1;
@@ -168,6 +168,7 @@ body::before {
 .ms-umb-canopy { fill: var(--teal); }
 .ms-umb-top { fill: var(--teal); }
 .ms-umb-pole { stroke: var(--teal); stroke-linecap: round; }
+.ms-chair { fill: var(--teal); }
 .ms-water rect { fill: var(--teal-soft); opacity: .28; }
 .ms-wave { stroke: var(--teal); fill: none; }
 .ms-wave-1 { stroke-width: 1.2; opacity: .5; }
@@ -197,6 +198,7 @@ body::before {
 [data-mode="night"] .ms-palm-coconut,
 [data-mode="night"] .ms-umb-canopy,
 [data-mode="night"] .ms-umb-top,
+[data-mode="night"] .ms-chair,
 [data-mode="night"] .ms-yacht-hull,
 [data-mode="night"] .ms-yacht-deck,
 [data-mode="night"] .ms-yacht-cabin,

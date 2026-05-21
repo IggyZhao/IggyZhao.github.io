@@ -136,35 +136,36 @@ function MiamiScene() {
     {x:744,w:18,h:44},{x:764,w:14,h:38},{x:780,w:16,h:36, t:'antenna'},
     {x:798,w:12,h:30}
   ];
-  // Palms — clustered on left and right beaches
+  // Palms — clustered, uneven heights
   const palms = [
-    {x:30,  h:56},
-    {x:72,  h:42},
-    {x:118, h:48},
-    {x:172, h:38},
-    {x:222, h:52},
-    {x:266, h:36},
-    {x:830, h:40},
-    {x:872, h:54},
-    {x:932, h:42},
-    {x:992, h:48},
-    {x:1052, h:54},
-    {x:1108, h:40},
-    {x:1156, h:46}
+    // Left cluster (3 close together)
+    {x:28,  h:58},
+    {x:54,  h:36},
+    {x:78,  h:48},
+    // Left singleton
+    {x:212, h:52},
+    {x:240, h:34},
+    // Right cluster
+    {x:842, h:42},
+    {x:870, h:58},
+    // Right cluster 2
+    {x:1042, h:54},
+    {x:1068, h:38},
+    {x:1092, h:46},
+    // Right far
+    {x:1156, h:44}
   ];
-  // Beach umbrellas — on left and right beaches, slight random tilts
+  // Beach umbrellas — just a few, near palms
   const umbrellas = [
-    {x:54,  tilt:-8, size:12},
-    {x:96,  tilt: 5, size:11},
-    {x:148, tilt:-4, size:13},
-    {x:198, tilt: 6, size:11},
-    {x:248, tilt:-3, size:12},
-    {x:852, tilt: 5, size:12},
-    {x:908, tilt:-6, size:13},
-    {x:968, tilt: 4, size:11},
-    {x:1030,tilt:-5, size:12},
-    {x:1088,tilt: 7, size:13},
-    {x:1138,tilt:-3, size:11}
+    {x:128, tilt:-6, size:13},
+    {x:268, tilt: 5, size:12},
+    {x:908, tilt:-5, size:13},
+    {x:1130,tilt: 6, size:12}
+  ];
+  // Lounge chairs — next to umbrellas
+  const chairs = [
+    {x:140, dir: 1},
+    {x:920, dir:-1}
   ];
   // Fireworks — burst high, with launch trail from water
   const fireworks = [
@@ -259,7 +260,7 @@ function MiamiScene() {
           })}
         </g>
 
-        {/* Beach umbrellas — flank the central skyline */}
+        {/* Beach umbrellas — just a handful, near palms */}
         <g className="ms-umbrellas">
           {umbrellas.map((u, i) => {
             const r = u.size;
@@ -275,6 +276,15 @@ function MiamiScene() {
               </g>
             );
           })}
+        </g>
+
+        {/* Lounge chairs — next to umbrellas */}
+        <g className="ms-chairs">
+          {chairs.map((c, i) => (
+            <g key={i} transform={`translate(${c.x}, ${waterY}) scale(${c.dir}, 1)`}>
+              <path className="ms-chair" d="M 0 0 L 0 -3 L 18 -3 L 24 -11 L 26 -11 L 20 -3 L 20 0 Z"/>
+            </g>
+          ))}
         </g>
 
         {/* Palm trees — clustered on the beaches */}
