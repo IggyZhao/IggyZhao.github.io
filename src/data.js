@@ -319,7 +319,7 @@ window.CV = {
     journalTotal: 77,
     conferenceReviewer: [
       { name: "International Conference on Information Systems (ICIS)", count: 21 },
-      { name: "Academy of Management Annual Meeting (AOM)", count: 10 },
+      { name: "Academy of Management Annual Meeting (AOM)", count: 13 },
       { name: "International Conference on Computational Social Science (IC2S2)", count: 9 },
       { name: "Americas Conference on Information Systems (AMCIS)", count: 4 },
       { name: "INFORMS Workshop on Data Science (WDS)", count: 3 },
@@ -333,7 +333,7 @@ window.CV = {
       { name: "Conference on Information Systems and Technology (CIST)", count: 1 },
       { name: "International AAAI Conference on Web and Social Media (ICWSM)", count: 1 },
     ],
-    conferenceTotal: 65,
+    conferenceTotal: 68,
     community: [
       "Mentor, AIS SIG DITE Career Mentorship Program",
       "MIS Quarterly Insider Interviewer",
