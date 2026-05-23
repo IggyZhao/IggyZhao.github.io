@@ -258,6 +258,28 @@ body::before {
 [data-mode="night"] .ms-score-bg { fill: #1A1916; stroke: var(--amber-soft); }
 [data-mode="night"] .ms-score-label { fill: var(--teal-soft); }
 
+/* Reset button inside score chip */
+.ms-reset-btn { cursor: pointer; }
+.ms-reset-bg {
+  fill: var(--amber);
+  stroke: var(--amber);
+  stroke-width: 1;
+  transition: fill .15s, transform .15s;
+}
+.ms-reset-icon {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 18px;
+  font-weight: 700;
+  fill: var(--paper);
+  dominant-baseline: middle;
+  pointer-events: none;
+  user-select: none;
+}
+.ms-reset-btn:hover .ms-reset-bg { fill: var(--coral); }
+.ms-reset-btn:active .ms-reset-bg { fill: var(--coral); transform: scale(0.92); transform-origin: -20px 0; }
+[data-mode="night"] .ms-reset-bg { fill: var(--amber-soft); stroke: var(--amber-soft); }
+[data-mode="night"] .ms-reset-icon { fill: #12120F; }
+
 /* Night mode lifts the silhouettes a touch */
 [data-mode="night"] .ms-skyline rect,
 [data-mode="night"] .ms-skyline path,

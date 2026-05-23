@@ -148,13 +148,16 @@ function MiamiScene() {
       targetXRef.current = x;
     };
     const onDown = (e) => {
+      // Let opt-out elements (e.g., the reset button) handle their own clicks
+      // without making the boat jump there.
+      if (e.target && e.target.closest && e.target.closest("[data-noboat]")) return;
       dragging = true;
       const cx = e.touches ? e.touches[0].clientX : e.clientX;
       setX(cx);
       if (e.cancelable) e.preventDefault();
     };
     const onMove = (e) => {
-      if (!dragging && !(e.buttons & 1) && !e.touches) return;
+      if (!dragging) return;
       const cx = e.touches ? e.touches[0].clientX : e.clientX;
       setX(cx);
     };
@@ -499,11 +502,20 @@ function MiamiScene() {
           })}
         </g>
 
-        {/* Score chip */}
+        {/* Score chip + reset button */}
         <g className="ms-score" transform="translate(1180, -32)">
-          <rect className="ms-score-bg" x="-176" y="-20" width="176" height="40" rx="20"/>
-          <text className="ms-score-label" x="-160" y="0">UTD24 caught</text>
-          <text className="ms-score-num"   x="-18"  y="1" textAnchor="end">{score}</text>
+          <rect className="ms-score-bg" x="-200" y="-20" width="200" height="40" rx="20"/>
+          <text className="ms-score-label" x="-186" y="0">UTD24 caught</text>
+          <text className="ms-score-num"   x="-50"  y="1" textAnchor="end">{score}</text>
+          <g className="ms-reset-btn" data-noboat="1"
+             onClick={() => {
+               scoreRef.current = 0;
+               setScore(0);
+               try { localStorage.removeItem("utd24_score"); } catch {}
+             }}>
+            <circle className="ms-reset-bg" cx="-20" cy="0" r="13"/>
+            <text className="ms-reset-icon" x="-20" y="1.5" textAnchor="middle">↺</text>
+          </g>
         </g>
       </svg>
       <div className="ms-hint" aria-hidden="true">drag the boat ↔ to catch UTD24 papers</div>
