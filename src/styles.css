@@ -145,10 +145,11 @@ body::before {
   width: 100%;
   margin-top: auto;
   margin-bottom: 0;
-  pointer-events: none;
   position: relative;
   z-index: 1;
   overflow: visible;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .miami-scene + .hero-bottom { margin-top: 0; }
 .miami-scene svg {
@@ -157,6 +158,20 @@ body::before {
   display: block;
   max-height: 220px;
   overflow: visible;
+  cursor: grab;
+  touch-action: pan-y;
+}
+.miami-scene svg:active { cursor: grabbing; }
+.ms-hint {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: .55;
+  margin-top: 4px;
+  text-align: center;
+  pointer-events: none;
 }
 /* Static silhouettes — dark teal */
 .ms-skyline rect,
@@ -178,18 +193,70 @@ body::before {
 .ms-yacht-deck,
 .ms-yacht-cabin,
 .ms-yacht-bridge,
-.ms-yacht-flag { fill: var(--teal); }
-.ms-yacht-window { fill: var(--paper); opacity: .55; }
-.ms-yacht-mast { stroke: var(--teal); }
+.ms-yacht-flag { fill: var(--amber); }
+.ms-yacht-window { fill: var(--paper); opacity: .85; }
+.ms-yacht-mast { stroke: var(--amber); }
 
-/* Yacht sails right-to-left, infinite */
+/* Yacht is now player-controlled — no animation. Subtle drop shadow gives it lift. */
 .ms-yacht {
-  animation: ms-sail 38s linear infinite;
+  filter: drop-shadow(0 2px 0 rgba(168, 86, 67, 0.18));
+  transition: none;
 }
-@keyframes ms-sail {
-  0%   { transform: translate(1260px, 232px); }
-  100% { transform: translate(-80px,  232px); }
+
+/* —— UTD24 falling papers —— */
+.ms-paper-bg {
+  fill: var(--paper);
+  stroke: var(--teal);
+  stroke-width: 1;
 }
+.ms-paper-rule { stroke: var(--teal-soft); stroke-width: 0.9; opacity: .55; }
+.ms-paper-text {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  fill: var(--teal);
+}
+[data-mode="night"] .ms-paper-bg { fill: #F4EFE6; stroke: #2E6F7E; }
+[data-mode="night"] .ms-paper-text { fill: #1B4F5C; }
+[data-mode="night"] .ms-paper-rule { stroke: #2E6F7E; }
+
+/* —— "+1" popup —— */
+.ms-popup {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  fill: var(--amber);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 3;
+}
+
+/* —— Score chip (top-right corner of scene) —— */
+.ms-score-bg {
+  fill: var(--paper);
+  stroke: var(--amber);
+  stroke-width: 1;
+  opacity: .92;
+}
+.ms-score-label {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 13px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  fill: var(--teal);
+  dominant-baseline: middle;
+}
+.ms-score-num {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 20px;
+  font-weight: 800;
+  fill: var(--amber);
+  dominant-baseline: middle;
+}
+[data-mode="night"] .ms-score-bg { fill: #1A1916; stroke: var(--amber-soft); }
+[data-mode="night"] .ms-score-label { fill: var(--teal-soft); }
 
 /* Night mode lifts the silhouettes a touch */
 [data-mode="night"] .ms-skyline rect,
@@ -204,12 +271,12 @@ body::before {
 [data-mode="night"] .ms-yacht-deck,
 [data-mode="night"] .ms-yacht-cabin,
 [data-mode="night"] .ms-yacht-bridge,
-[data-mode="night"] .ms-yacht-flag { fill: var(--teal-soft); }
+[data-mode="night"] .ms-yacht-flag { fill: var(--amber-soft); }
 [data-mode="night"] .ms-skyline line,
 [data-mode="night"] .ms-palm-trunk,
 [data-mode="night"] .ms-umb-pole,
-[data-mode="night"] .ms-yacht-mast,
 [data-mode="night"] .ms-wave { stroke: var(--teal-soft); }
+[data-mode="night"] .ms-yacht-mast { stroke: var(--amber-soft); }
 
 /* Fireworks — only color allowed; rise from water then burst high */
 .ms-fw-trail {
@@ -269,7 +336,6 @@ body::before {
 
 @media (prefers-reduced-motion: reduce) {
   .ms-fw-trail, .ms-fw-burst line, .ms-fw-burst circle { animation: none; opacity: 0; }
-  .ms-yacht { animation: none; transform: translate(870px, 232px); }
 }
 
 /* —— 3D portrait scene —— */
