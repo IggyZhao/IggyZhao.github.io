@@ -224,10 +224,10 @@ window.CV = {
 
   honors: {
     researchGrants: [
-      "AIS Distinguished Member (2025)",
       "Outstanding Editor, Information Technology for Development, Awarded by AIS (2026)",
       "Google Cloud Research Credits (2026) — $5,000",
       "Google Career Launchpad Program (2026) — $5,000",
+      "AIS Distinguished Member (2025)",
       "AIS Entrepreneurial Innovation Fellowship, Kauffman Foundation ($6,500)",
       "Best ERF Paper Award, AMCIS (2025)",
       "Advanced Practices Council of Society for Information Management ($5,000)",
@@ -306,7 +306,7 @@ window.CV = {
       "Committee Member, KrAIS Summer Workshop 2023",
     ],
     journalReviewer: [
-      { name: "Information Technology for Development", count: 46 },
+      { name: "Information Technology for Development", count: 48 },
       { name: "Internet Research", count: 15 },
       { name: "Industrial Management & Data Systems", count: 4 },
       { name: "Information Systems Research", count: 3 },
@@ -318,7 +318,7 @@ window.CV = {
     ],
     journalTotal: 74,
     conferenceReviewer: [
-      { name: "International Conference on Information Systems (ICIS)", count: 19 },
+      { name: "International Conference on Information Systems (ICIS)", count: 21 },
       { name: "Academy of Management Annual Meeting (AOM)", count: 10 },
       { name: "International Conference on Computational Social Science (IC2S2)", count: 9 },
       { name: "Americas Conference on Information Systems (AMCIS)", count: 4 },
