@@ -33,7 +33,7 @@ window.CV = {
       id: "killtwo",
       authors: "Zhao, Z., Aaltonen, A., & Pang, M.S.",
       title: "Kill Two Birds with One Stone: Using Cross-Platform Software Development Kits for Digital Innovations",
-      status: "Finalizing for Submission",
+      status: "Under Review, Management Science",
       venue: "Management Science",
       presented: ["AOM 2025", "BU PlatStrat 2024", "EU-DPRN 2024", "ICIS 2023", "AMCIS 2023 — Top 25% ERF Paper"],
     },
