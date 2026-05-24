@@ -504,9 +504,9 @@ function MiamiScene() {
 
         {/* Score chip + reset button */}
         <g className="ms-score" transform="translate(1180, -32)">
-          <rect className="ms-score-bg" x="-200" y="-20" width="200" height="40" rx="20"/>
-          <text className="ms-score-label" x="-186" y="0">UTD24 caught</text>
-          <text className="ms-score-num"   x="-50"  y="1" textAnchor="end">{score}</text>
+          <rect className="ms-score-bg" x="-290" y="-20" width="290" height="40" rx="20"/>
+          <text className="ms-score-label" x="-274" y="0">UTD24 caught</text>
+          <text className="ms-score-num"   x="-55"  y="1" textAnchor="end">{score}</text>
           <g className="ms-reset-btn" data-noboat="1"
              onClick={() => {
                scoreRef.current = 0;
