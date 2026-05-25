@@ -306,7 +306,7 @@ window.CV = {
       "Committee Member, KrAIS Summer Workshop 2023",
     ],
     journalReviewer: [
-      { name: "Information Technology for Development", count: 48 },
+      { name: "Information Technology for Development", count: 49 },
       { name: "Internet Research", count: 15 },
       { name: "Industrial Management & Data Systems", count: 4 },
       { name: "Information Systems Research", count: 3 },
@@ -316,9 +316,9 @@ window.CV = {
       { name: "Production and Operations Management", count: 1 },
       { name: "Journal of Business Research", count: 1 },
     ],
-    journalTotal: 77,
+    journalTotal: 78,
     conferenceReviewer: [
-      { name: "International Conference on Information Systems (ICIS)", count: 21 },
+      { name: "International Conference on Information Systems (ICIS)", count: 22 },
       { name: "Academy of Management Annual Meeting (AOM)", count: 13 },
       { name: "International Conference on Computational Social Science (IC2S2)", count: 9 },
       { name: "Americas Conference on Information Systems (AMCIS)", count: 4 },
@@ -333,7 +333,7 @@ window.CV = {
       { name: "Conference on Information Systems and Technology (CIST)", count: 1 },
       { name: "International AAAI Conference on Web and Social Media (ICWSM)", count: 1 },
     ],
-    conferenceTotal: 68,
+    conferenceTotal: 69,
     community: [
       "Mentor, AIS SIG DITE Career Mentorship Program",
       "MIS Quarterly Insider Interviewer",
