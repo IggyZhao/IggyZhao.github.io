@@ -74,7 +74,7 @@ window.CV = {
       id: "vibecoding",
       authors: "Boussioux, L., Zhao, Z., Cho, K.",
       title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding",
-      presented: ["Wharton AI and the Future of Work 2026", "AOM 2026", "INFORMS 2026"],
+      presented: ["Wharton AI and the Future of Work 2026", "AOM 2026", "INFORMS 2026", "DSI 2026"],
     },
     {
       id: "generativity",
@@ -110,6 +110,7 @@ window.CV = {
   presentations: [
     { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "From Author to Auditor: The Verification Tax in Clinical Documentation", authors: "Hertelendy, Zhao*, Cho, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration", authors: "Zhao*, Cho, Aaltonen, Straub", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "From Author to Auditor: The Verification Tax in Clinical Documentation", authors: "Hertelendy*, Zhao, Cho, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "Timing Matters: AI Response Time in Healthcare Decision-Making", authors: "Yang*, Zhao, Cho, Ayabakan", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
