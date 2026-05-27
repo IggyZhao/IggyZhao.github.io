@@ -226,7 +226,7 @@ window.CV = {
     researchHonors: [
       "Outstanding Editor, Information Technology for Development, Awarded by AIS (2026)",
       "Junior Faculty Consortium Fellow, AOM CTO Division (2026)",
-      "AIS Distinguished Member (2025)",
+      "AIS Distinguished Member (2026)",
       "Best ERF Paper Award, AMCIS (2025)",
       "MIS Quarterly Author Development Workshop Selected Attendee (2024)",
       "MIS Quarterly Reviewer Development Workshop Selected Attendee (2024, 2025)",
@@ -237,12 +237,12 @@ window.CV = {
       "Top 25% ERF Paper, AMCIS (2023)",
     ],
     researchGrants: [
-      "Google Cloud Research Credits (2026, $5,000)",
-      "Google Career Launchpad Program (2026, $5,000)",
-      "AIS Entrepreneurial Innovation Fellowship, Kauffman Foundation ($6,500)",
-      "Syntheticusers.com Research Grant ($6,000)",
-      "Advanced Practices Council of Society for Information Management ($5,000)",
-      "NSF Travel Funding (Grant #2328, $1,024)",
+      "Google Cloud Research Credits (2026) — $5,000",
+      "Google Career Launchpad Program (2026) — $5,000",
+      "AIS Entrepreneurial Innovation Fellowship, Kauffman Foundation (2025) — $6,500",
+      "Advanced Practices Council of Society for Information Management (2025) — $5,000",
+      "Syntheticusers.com Research Grant (2024) — $6,000",
+      "NSF Travel Funding, Grant #2328 (2024) — $1,024",
     ],
     fiu: [
       "Dean's Office Travel Funding (2026) — $2,000",
