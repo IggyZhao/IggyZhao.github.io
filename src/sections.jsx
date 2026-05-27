@@ -13,8 +13,7 @@ function About() {
       <div className="about-lead reveal">
         <div className="lead-label">Focus</div>
         <p className="lead-statement">
-          How <em>generative</em> and <em>agentic AI</em> reshape the future of work —
-          especially in <strong>coding</strong>, <strong>search</strong>, and <strong>clinical decision making</strong>.
+          How <em>generative</em> and <em>agentic AI</em> reshape human work and decision making across <strong>coding</strong>, <strong>search</strong>, and <strong>healthcare</strong> contexts.
         </p>
       </div>
 
