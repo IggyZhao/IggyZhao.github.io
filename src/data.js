@@ -237,8 +237,8 @@ window.CV = {
       "Top 25% ERF Paper, AMCIS (2023)",
     ],
     researchGrants: [
-      "Google Cloud Research Credits (2026) — $5,000",
-      "Google Career Launchpad Program (2026) — $5,000",
+      "Google Cloud Research Credits (2026, $5,000)",
+      "Google Career Launchpad Program (2026, $5,000)",
       "AIS Entrepreneurial Innovation Fellowship, Kauffman Foundation ($6,500)",
       "Syntheticusers.com Research Grant ($6,000)",
       "Advanced Practices Council of Society for Information Management ($5,000)",
