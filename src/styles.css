@@ -1159,18 +1159,22 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
 
 /* ========== Honors ========== */
 .honors-hero {
-  display: grid; grid-template-columns: 180px 1fr; gap: 60px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
   padding: 48px 40px;
   background: var(--paper-2);
   border: 1px solid var(--line);
   margin-bottom: 60px;
 }
+.hh-col { display: flex; flex-direction: column; gap: 18px; }
 .hh-label {
   font-family: var(--mono); font-size: 12px; letter-spacing: .18em;
   text-transform: uppercase; color: var(--amber);
-  padding-top: 8px;
+  padding-top: 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
 }
 .hh-list { list-style: none; padding: 0; margin: 0; column-count: 2; column-gap: 60px; }
+.hh-list-single { column-count: 1; column-gap: 0; }
 .hh-list li {
   break-inside: avoid; page-break-inside: avoid;
   font-family: var(--serif); font-size: 17.5px; line-height: 1.5;
@@ -1507,7 +1511,7 @@ footer {
 
   /* Honors */
   .honors-hero {
-    grid-template-columns: 1fr; gap: 20px;
+    grid-template-columns: 1fr; gap: 32px;
     padding: 28px 22px; margin-bottom: 44px;
   }
   .hh-list { column-count: 1; column-gap: 0; }

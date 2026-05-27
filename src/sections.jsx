@@ -157,12 +157,20 @@ function Honors() {
         <h2 className="section-title"><em>Honors</em> &amp; awards.</h2>
       </div>
 
-      {/* Hero: research grants highlighted */}
+      {/* Hero: honors and grants side-by-side */}
       <div className="honors-hero reveal">
-        <div className="hh-label">Research honors &amp; grants</div>
-        <ul className="hh-list">
-          {h.researchGrants.map((x, i) => <li key={i}>{x}</li>)}
-        </ul>
+        <div className="hh-col">
+          <div className="hh-label">Research honors</div>
+          <ul className="hh-list hh-list-single">
+            {h.researchHonors.map((x, i) => <li key={i}>{x}</li>)}
+          </ul>
+        </div>
+        <div className="hh-col">
+          <div className="hh-label">Research grants</div>
+          <ul className="hh-list hh-list-single">
+            {h.researchGrants.map((x, i) => <li key={i}>{x}</li>)}
+          </ul>
+        </div>
       </div>
 
       {/* Institutional honors: FIU + Temple stacked left, UConn + UoN stacked right */}
