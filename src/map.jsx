@@ -259,7 +259,7 @@ function MapSection() {
               <button key={k} className={filter===k?"active":""} onClick={() => setFilter(k)}>
                 {k === "conference" ? "Conference" : "Invited"}
                 <span>·</span>
-                {k === "conference" ? conferenceGroups.length : invitedRows.length}
+                {k === "conference" ? conferenceGroups.reduce((n, g) => n + g.talks.length, 0) : invitedRows.length}
               </button>
             ))}
           </div>
