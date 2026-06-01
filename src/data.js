@@ -238,6 +238,7 @@ window.CV = {
       "Top 25% ERF Paper, AMCIS (2023)",
     ],
     researchGrants: [
+      "Google Vertex AI Agent Builder (2026) — $1,000",
       "Google Cloud Research Credits (2026) — $5,000",
       "Google Career Launchpad Program (2026) — $5,000",
       "AIS Entrepreneurial Innovation Fellowship, Kauffman Foundation (2025) — $6,500",
