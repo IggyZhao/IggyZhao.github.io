@@ -222,21 +222,21 @@ function Service() {
         </ol>
       </div>
 
-      {/* Reviewer bars — two-column, preserving given order */}
+      {/* Reviewer venues, two columns, ordered by prestige */}
       <div className="reviewer-grid reveal">
         <div>
           <div className="ss-label">
             <span>Journal reviewer</span>
             <span className="ss-count">{s.journalTotal} reports</span>
           </div>
-          <ReviewerBars items={s.journalReviewer}/>
+          <ReviewerList items={s.journalReviewer}/>
         </div>
         <div>
           <div className="ss-label">
             <span>Conference reviewer</span>
             <span className="ss-count">{s.conferenceTotal} reports</span>
           </div>
-          <ReviewerBars items={s.conferenceReviewer}/>
+          <ReviewerList items={s.conferenceReviewer}/>
         </div>
       </div>
 
@@ -251,20 +251,13 @@ function Service() {
   );
 }
 
-function ReviewerBars({ items }) {
-  const max = Math.max(...items.map(x => x.count));
+function ReviewerList({ items }) {
   return (
-    <div className="rev-bars">
+    <ul className="rev-list">
       {items.map((r, i) => (
-        <div key={i} className="rev-row">
-          <div className="rev-name">{r.name}</div>
-          <div className="rev-bar">
-            <div className="rev-fill" style={{width: `${(r.count / max) * 100}%`}}/>
-          </div>
-          <div className="rev-count">{r.count}</div>
-        </div>
+        <li key={i}>{r.name}</li>
       ))}
-    </div>
+    </ul>
   );
 }
 
@@ -281,7 +274,7 @@ function Contact() {
         <div><h6>Office</h6><p>Florida International University<br/>College of Business<br/>11200 SW 8th St<br/>Miami, FL 33199</p></div>
         <div><h6>Email</h6><p><a href="mailto:ziyzhao@fiu.edu" style={{borderBottom:'1px solid'}}>ziyzhao@fiu.edu</a></p></div>
         <div><h6>Social</h6><p><a href="https://www.linkedin.com/in/iggyzhao/" target="_blank" rel="noopener" style={{borderBottom:'1px solid'}}>LinkedIn</a><br/><a href="https://scholar.google.com/citations?user=9xgCneIAAAAJ" target="_blank" rel="noopener" style={{borderBottom:'1px solid'}}>Google Scholar</a></p></div>
-        <div><h6>Updated</h6><p style={{fontFamily:'var(--mono)', fontSize:13, lineHeight:1.5, letterSpacing:'.08em', textTransform:'uppercase'}}>April 2026</p></div>
+        <div><h6>Updated</h6><p style={{fontFamily:'var(--mono)', fontSize:13, lineHeight:1.5, letterSpacing:'.08em', textTransform:'uppercase'}}>June 2026</p></div>
       </div>
     </section>
   );

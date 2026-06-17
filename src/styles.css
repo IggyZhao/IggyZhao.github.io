@@ -1272,26 +1272,13 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
 }
 
 .reviewer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-.rev-bars { display: flex; flex-direction: column; gap: 14px; }
-.rev-row {
-  display: grid; grid-template-columns: 1fr 80px 32px;
-  gap: 16px; align-items: center;
+.rev-list { list-style: none; padding: 0; margin: 0; }
+.rev-list li {
+  font-family: var(--serif); font-size: 17.5px; line-height: 1.5;
+  color: var(--ink); padding: 9px 0 9px 18px; position: relative;
 }
-.rev-name {
-  font-family: var(--serif); font-size: 17.5px; line-height: 1.4;
-  color: var(--ink);
-}
-.rev-bar {
-  height: 6px; background: var(--paper-3);
-  position: relative;
-}
-.rev-fill {
-  position: absolute; left: 0; top: 0; bottom: 0;
-  background: var(--amber);
-}
-.rev-count {
-  font-family: var(--mono); font-size: 14px; letter-spacing: .02em;
-  color: var(--ink); text-align: right; font-weight: 500;
+.rev-list li::before {
+  content: "—"; position: absolute; left: 0; color: var(--amber);
 }
 
 /* ========== Invited talks ========== */
@@ -1528,8 +1515,7 @@ footer {
   .service-community { columns: 1; column-gap: 0; }
   .service-community li { font-size: 16px; }
   .reviewer-grid { grid-template-columns: 1fr; gap: 36px; }
-  .rev-row { grid-template-columns: 1fr 60px 28px; gap: 10px; }
-  .rev-name { font-size: 16px; }
+  .rev-list li { font-size: 16px; }
 
   /* Invited talks */
   .talk-row { padding: 16px 0; }
