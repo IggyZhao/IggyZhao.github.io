@@ -314,6 +314,7 @@ window.CV = {
     journalReviewer: [
       { name: "MIS Quarterly", count: 1 },
       { name: "Information Systems Research", count: 3 },
+      { name: "Journal of the Association for Information Systems", count: 1 },
       { name: "Production and Operations Management", count: 1 },
       { name: "ACM Transactions on Management Information Systems", count: 2 },
       { name: "Internet Research", count: 15 },
@@ -322,7 +323,7 @@ window.CV = {
       { name: "Information Technology for Development", count: 49 },
       { name: "Industrial Management & Data Systems", count: 4 },
     ],
-    journalTotal: 78,
+    journalTotal: 79,
     // Ordered by prestige; per-venue counts retained but no longer displayed.
     conferenceReviewer: [
       { name: "International Conference on Information Systems (ICIS)", count: 24 },
