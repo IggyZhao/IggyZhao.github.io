@@ -79,8 +79,8 @@ window.CV = {
     {
       id: "generativity",
       authors: "Boussioux, L., Zhao, Z., Cho, K.",
-      title: "The Anatomy of an Agentic Skill",
-      presented: ["Wharton AI and the Future of Work 2026", "SCECR 2026"],
+      title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption",
+      presented: ["Wharton AI and the Future of Work 2026", "SCECR 2026", "INFORMS 2026"],
     },
     {
       id: "timing",
@@ -114,10 +114,11 @@ window.CV = {
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy*, Zhao, Cho, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "Timing Matters: AI Response Time in Healthcare Decision-Making", authors: "Yang*, Zhao, Cho, Ayabakan", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
-    { date: "2026-06", venue: "Statistical Challenges in eCommerce Research (SCECR 2026)", title: "The Anatomy of an Agentic Skill", authors: "Boussioux, Zhao, Cho*", city: "Tokyo, Japan", lat: 35.68, lng: 139.69 },
+    { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-06", venue: "Statistical Challenges in eCommerce Research (SCECR 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho*", city: "Tokyo, Japan", lat: 35.68, lng: 139.69 },
     { date: "2026-07", venue: "Academy of Management Annual Meeting (AOM 2026)", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux, Zhao*, Cho", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
     { date: "2026-05", venue: "Wharton AI and the Future of Work Conference", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux, Zhao, Cho*", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
-    { date: "2026-05", venue: "Wharton AI and the Future of Work Conference", title: "The Anatomy of an Agentic Skill", authors: "Boussioux, Zhao, Cho*", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
+    { date: "2026-05", venue: "Wharton AI and the Future of Work Conference", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho*", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
     { date: "2026-05", venue: "Conference on Health IT and Analytics (CHITA)", title: "How Response Time Shapes Patient Decision-Making Using Generative AI–Based Health Agent", authors: "Yang*, Zhao, Cho, Ayabakan", city: "Washington, D.C.", lat: 38.9, lng: -77.04 },
     { date: "2026-05", venue: "Workshop “Theorizing Data and AI”", title: "How Knowledge Workers Create and Evaluate Solutions Coming from Generative Artificial Intelligence", authors: "Zhao, Cho, Aaltonen*, Straub", city: "London, UK", lat: 51.5, lng: -0.12 },
     { date: "2025-12", venue: "International Conference on Information Systems (ICIS 2025)", title: "Timing Matters: AI Response Time in Healthcare Decision-Making — TREO Talk", authors: "Yang*, Zhao, Cho, Ayabakan", city: "Nashville, TN", lat: 36.16, lng: -86.78 },
@@ -304,6 +305,7 @@ window.CV = {
     committee: [
       "Associate Editor, From Generative AI to Agentic IS, WI 2026",
       "Session Chair, AI/ML In Decision Making, DSI Annual Conference 2026",
+      "Program Committee, Annual Workshop on Information Technologies and Systems 2026",
       "Symposium Organizer, Academy of Management Annual Meeting 2025",
       "Editorial Review Board, Information Technology for Development (since 2025)",
       "Committee Member, INFORMS Workshop on Data Science 2025",
@@ -341,7 +343,7 @@ window.CV = {
       { name: "Korea Artificial Intelligence Society Workshop (KrAIS)", count: 2 },
       { name: "DIGI+ Postdoctoral Fellowship", count: 3 },
     ],
-    conferenceTotal: 73,
+    conferenceTotal: 75,
     community: [
       "Mentor, AIS SIG DITE Career Mentorship Program",
       "MIS Quarterly Insider Interviewer",
