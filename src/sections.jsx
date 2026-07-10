@@ -13,7 +13,7 @@ function About() {
       <div className="about-lead reveal">
         <div className="lead-label">Focus</div>
         <p className="lead-statement">
-          How <em>generative</em> and <em>agentic AI</em> reshape human work and decision making across <strong>coding</strong>, <strong>search</strong>, and <strong>healthcare</strong> contexts.
+          I open the black box of human-AI collaboration. Through <em>Multimodal Observation of Sequential Activity</em>, I trace how <em>generative</em> and <em>agentic AI</em> reshape human work and judgment across <strong>coding</strong>, <strong>information search</strong>, and <strong>healthcare decision-making</strong>.
         </p>
       </div>
 
