@@ -511,8 +511,8 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
 }
 .lead-statement {
   font-family: var(--serif); font-weight: 300;
-  font-size: clamp(32px, 3.8vw, 54px); line-height: 1.2;
-  letter-spacing: -0.02em; color: var(--ink); margin: 0;
+  font-size: clamp(23px, 2.5vw, 34px); line-height: 1.35;
+  letter-spacing: -0.01em; color: var(--ink); margin: 0;
   text-wrap: pretty;
 }
 .lead-statement em {
