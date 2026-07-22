@@ -74,7 +74,7 @@ window.CV = {
       id: "vibecoding",
       authors: "Boussioux, L., Zhao, Z., Cho, K.",
       title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding",
-      presented: ["Wharton AI and the Future of Work 2026", "AOM 2026", "INFORMS 2026", "DSI 2026"],
+      presented: ["Wharton AI and the Future of Work 2026", "AOM 2026", "Wharton Business & Generative AI 2026", "INFORMS 2026", "DSI 2026"],
     },
     {
       id: "generativity",
@@ -115,6 +115,7 @@ window.CV = {
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "Timing Matters: AI Response Time in Healthcare Decision-Making", authors: "Yang*, Zhao, Cho, Ayabakan", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-09-09", displayDate: "2026-09", venue: "Wharton Business & Generative AI Conference", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-06", venue: "Statistical Challenges in eCommerce Research (SCECR 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho*", city: "Tokyo, Japan", lat: 35.68, lng: 139.69 },
     { date: "2026-07", venue: "Academy of Management Annual Meeting (AOM 2026)", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux, Zhao*, Cho", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
     { date: "2026-05", venue: "Wharton AI and the Future of Work Conference", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux, Zhao, Cho*", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
