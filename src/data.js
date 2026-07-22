@@ -307,6 +307,7 @@ window.CV = {
       "Associate Editor, From Generative AI to Agentic IS, WI 2026",
       "Session Chair, AI/ML In Decision Making, DSI Annual Conference 2026",
       "Program Committee, Annual Workshop on Information Technologies and Systems 2026",
+      "Committee Member, INFORMS Workshop on Data Science 2026",
       "Symposium Organizer, Academy of Management Annual Meeting 2025",
       "Editorial Review Board, Information Technology for Development (since 2025)",
       "Committee Member, INFORMS Workshop on Data Science 2025",
