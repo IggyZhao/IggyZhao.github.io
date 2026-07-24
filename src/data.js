@@ -96,6 +96,11 @@ window.CV = {
       title: "Timing Matters: AI Response Time in Healthcare Decision-Making",
       presented: ["ICIS 2025", "CHITA 2026", "INFORMS 2026"],
     },
+    {
+      id: "skillartifacts",
+      authors: "Zhao, Z., Cho, K., & Aaltonen, A.",
+      title: "Skills as Artifacts",
+    },
   ],
 
   published: [
