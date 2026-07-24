@@ -61,6 +61,14 @@ window.CV = {
       venue: "MIS Quarterly",
       presented: ["AOM 2025", "Advanced Practices Council, SIM 2025"],
     },
+    {
+      id: "ambient",
+      authors: "Hertelendy, A., Cho, K., Zhao, Z., & Li, J.",
+      title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation",
+      status: "Preparation to Submission",
+      venue: "MIS Quarterly",
+      presented: ["DSI 2026", "INFORMS 2026"],
+    },
   ],
 
   inProgress: [
@@ -88,12 +96,6 @@ window.CV = {
       title: "Timing Matters: AI Response Time in Healthcare Decision-Making",
       presented: ["ICIS 2025", "CHITA 2026", "INFORMS 2026"],
     },
-    {
-      id: "ambient",
-      authors: "Hertelendy, A., Zhao, Z., Cho, K., & Li, J.",
-      title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation",
-      presented: ["DSI 2026", "INFORMS 2026"],
-    },
   ],
 
   published: [
@@ -108,10 +110,10 @@ window.CV = {
 
   // Presentations with geography for the map. Each has its own title.
   presentations: [
-    { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy, Zhao*, Cho, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy, Cho, Zhao*, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration", authors: "Zhao*, Cho, Aaltonen, Straub", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
-    { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy*, Zhao, Cho, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy*, Cho, Zhao, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "Timing Matters: AI Response Time in Healthcare Decision-Making", authors: "Yang*, Zhao, Cho, Ayabakan", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho*", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
