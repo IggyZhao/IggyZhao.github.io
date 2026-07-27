@@ -88,7 +88,7 @@ window.CV = {
       id: "generativity",
       authors: "Boussioux, L., Zhao, Z., Cho, K.",
       title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption",
-      presented: ["Wharton AI and the Future of Work 2026", "SCECR 2026", "INFORMS 2026"],
+      presented: ["Wharton AI and the Future of Work 2026", "SCECR 2026", "INFORMS 2026", "ICIS 2026"],
     },
     {
       id: "timing",
@@ -115,6 +115,7 @@ window.CV = {
 
   // Presentations with geography for the map. Each has its own title.
   presentations: [
+    { date: "2026-12", venue: "International Conference on Information Systems (ICIS 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho", city: "Lisbon, Portugal", lat: 38.72, lng: -9.14 },
     { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy, Cho, Zhao*, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration", authors: "Zhao*, Cho, Aaltonen, Straub", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "When Code Writes the Coder: The Validation Paradox of Vibe Coding", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
@@ -352,7 +353,7 @@ window.CV = {
       { name: "Korea Artificial Intelligence Society Workshop (KrAIS)", count: 2 },
       { name: "DIGI+ Postdoctoral Fellowship", count: 3 },
     ],
-    conferenceTotal: 75,
+    conferenceTotal: 77,
     community: [
       "Mentor, AIS SIG DITE Career Mentorship Program",
       "MIS Quarterly Insider Interviewer",
