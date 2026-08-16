@@ -47,25 +47,33 @@
 <script type="text/babel" src="src/sections.jsx?v=20"></script>
 
 <script type="text/babel">
+  // Per-section error boundary: a crash in one section (browser extension,
+  // Google Translate DOM edits, CDN hiccup) must never blank the whole site.
+  class Guard extends React.Component {
+    constructor(props) { super(props); this.state = { failed: false }; }
+    static getDerivedStateFromError() { return { failed: true }; }
+    componentDidCatch(err) { console.error("Section crashed:", this.props.name, err); }
+    render() { return this.state.failed ? null : this.props.children; }
+  }
   function App() {
     return (
       <>
-        <Reveal/>
-        <Topbar/>
-        <Hero3D/>
-        <About/>
-        <PapersSection/>
-        <MapSection/>
-        <Teaching/>
-        <Honors/>
-        <Service/>
-        <Education/>
-        <Contact/>
+        <Guard name="Reveal"><Reveal/></Guard>
+        <Guard name="Topbar"><Topbar/></Guard>
+        <Guard name="Hero3D"><Hero3D/></Guard>
+        <Guard name="About"><About/></Guard>
+        <Guard name="Papers"><PapersSection/></Guard>
+        <Guard name="Map"><MapSection/></Guard>
+        <Guard name="Teaching"><Teaching/></Guard>
+        <Guard name="Honors"><Honors/></Guard>
+        <Guard name="Service"><Service/></Guard>
+        <Guard name="Education"><Education/></Guard>
+        <Guard name="Contact"><Contact/></Guard>
         <footer>
           <span>© 2026 Ziyi Zhao</span>
           <span>Miami, FL</span>
         </footer>
-        <Tweaks/>
+        <Guard name="Tweaks"><Tweaks/></Guard>
       </>
     );
   }
