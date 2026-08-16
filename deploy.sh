@@ -5,6 +5,11 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
+# Stamp the current month/year into data.js so the two "Updated" spots stay current
+stamp=$(date "+%B %Y")
+sed -i '' "s|updated: \"[^\"]*\"|updated: \"${stamp}\"|" src/data.js
+echo "Stamped updated: ${stamp}"
+
 for f in $(git diff --name-only -- 'src/*.js' 'src/*.jsx' 'src/*.css'); do
   base=$(basename "$f")
   current=$(sed -n "s|.*src/${base}?v=\([0-9]*\).*|\1|p" index.html | head -1)

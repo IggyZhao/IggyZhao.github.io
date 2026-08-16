@@ -1,5 +1,6 @@
 // All factual content, no invented taglines.
 window.CV = {
+  updated: "August 2026", // auto-stamped by deploy.sh on every deploy
   name: "Ziyi Zhao",
   nickname: "Iggy",
   title: "Assistant Professor of Information Systems & Business Analytics",

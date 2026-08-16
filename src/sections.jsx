@@ -274,7 +274,7 @@ function Contact() {
         <div><h6>Office</h6><p>Florida International University<br/>College of Business<br/>11200 SW 8th St<br/>Miami, FL 33199</p></div>
         <div><h6>Email</h6><p><a href="mailto:ziyzhao@fiu.edu" style={{borderBottom:'1px solid'}}>ziyzhao@fiu.edu</a></p></div>
         <div><h6>Social</h6><p><a href="https://www.linkedin.com/in/iggyzhao/" target="_blank" rel="noopener" style={{borderBottom:'1px solid'}}>LinkedIn</a><br/><a href="https://scholar.google.com/citations?user=9xgCneIAAAAJ" target="_blank" rel="noopener" style={{borderBottom:'1px solid'}}>Google Scholar</a></p></div>
-        <div><h6>Updated</h6><p style={{fontFamily:'var(--mono)', fontSize:13, lineHeight:1.5, letterSpacing:'.08em', textTransform:'uppercase'}}>June 2026</p></div>
+        <div><h6>Updated</h6><p style={{fontFamily:'var(--mono)', fontSize:13, lineHeight:1.5, letterSpacing:'.08em', textTransform:'uppercase'}}>{window.CV.updated}</p></div>
       </div>
     </section>
   );
