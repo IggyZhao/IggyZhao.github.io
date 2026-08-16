@@ -357,6 +357,7 @@ window.CV = {
     ],
     conferenceTotal: 77,
     community: [
+      "Mentor, AOM CTO Division Career Mentorship Program",
       "Mentor, AIS SIG DITE Career Mentorship Program",
       "MIS Quarterly Insider Interviewer",
       "Volunteer, ICIS 2021, 2022, 2024",
