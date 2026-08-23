@@ -40,7 +40,7 @@ function MapSection() {
     if (!document.getElementById("globe-gl-script")) {
       const s = document.createElement("script");
       s.id = "globe-gl-script";
-      s.src = "https://unpkg.com/globe.gl@2";
+      s.src = "https://unpkg.com/globe.gl@2.46.1"; // pinned: 2.46.2 (2026-08-22) renders a blank globe
       s.async = true;
       document.head.appendChild(s);
     }
