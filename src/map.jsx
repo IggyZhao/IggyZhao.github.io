@@ -34,6 +34,7 @@ function MapSection() {
 
   // Lazy-load globe.gl only on desktop.
   const [globeReady, setGlobeReady] = useState(typeof window !== "undefined" && !!window.Globe);
+  const [globeFailed, setGlobeFailed] = useState(false);
   useEffect(() => {
     if (!isDesktop || globeReady) return;
     if (window.Globe) { setGlobeReady(true); return; }
@@ -141,10 +142,10 @@ function MapSection() {
         <h2 className="section-title">Where the <em>work</em> has travelled.</h2>
       </div>
 
-      <div className={`map-layout reveal ${isDesktop && globeReady ? "has-globe" : ""}`}>
-        <div className={`map-wrap ${isDesktop && globeReady ? "has-globe" : ""}`}>
-          {isDesktop && globeReady ? (
-            <GlobeView cities={cities} active={active} onSelect={setActive} />
+      <div className={`map-layout reveal ${isDesktop && globeReady && !globeFailed ? "has-globe" : ""}`}>
+        <div className={`map-wrap ${isDesktop && globeReady && !globeFailed ? "has-globe" : ""}`}>
+          {isDesktop && globeReady && !globeFailed ? (
+            <GlobeView cities={cities} active={active} onSelect={setActive} onFail={() => setGlobeFailed(true)} />
           ) : (<>
           <div className="map-bg" dangerouslySetInnerHTML={{__html: mapSvg}}/>
           <svg className="map-overlay" viewBox="0 110 2000 680" preserveAspectRatio="xMidYMid slice">
@@ -329,13 +330,15 @@ function MapSection() {
 }
 
 // 3D globe view — globe.gl (Three.js) + hex-dotted land to echo the flat map's aesthetic.
-function GlobeView({ cities, active, onSelect }) {
+function GlobeView({ cities, active, onSelect, onFail }) {
   const mountRef = useRef(null);
   const worldRef = useRef(null);
 
   useEffect(() => {
     if (!window.Globe || !mountRef.current) return;
     const el = mountRef.current;
+    let ro = null;
+    try {
 
     const HOME = { lat: 25.76, lng: -80.19 }; // Miami
     const arcs = cities
@@ -394,7 +397,7 @@ function GlobeView({ cities, active, onSelect }) {
     // Size to container.
     const resize = () => world.width(el.clientWidth).height(el.clientHeight);
     resize();
-    const ro = new ResizeObserver(resize);
+    ro = new ResizeObserver(resize);
     ro.observe(el);
 
     // Initial view — western hemisphere (home is Miami), zoomed out so globe doesn't dominate.
@@ -415,8 +418,15 @@ function GlobeView({ cities, active, onSelect }) {
 
     worldRef.current = world;
 
+    } catch (e) {
+      // WebGL/driver/library failure: drop back to the flat SVG map instead of losing the section.
+      console.error("Globe failed, falling back to flat map:", e);
+      if (onFail) onFail();
+      return;
+    }
+
     return () => {
-      try { ro.disconnect(); } catch (e) {}
+      try { if (ro) ro.disconnect(); } catch (e) {}
       if (worldRef.current && worldRef.current._destructor) {
         try { worldRef.current._destructor(); } catch (e) {}
       }
@@ -429,13 +439,18 @@ function GlobeView({ cities, active, onSelect }) {
   useEffect(() => {
     const w = worldRef.current;
     if (!w) return;
-    w.pointColor(d => (d.city === active ? "#B8743A" : "#A85643"));
-    if (active) {
-      w.controls().autoRotate = false;
-      const c = cities.find(x => x.city === active);
-      if (c) w.pointOfView({ lat: c.lat, lng: c.lng, altitude: 2.2 }, 900);
-    } else {
-      w.controls().autoRotate = true;
+    try {
+      w.pointColor(d => (d.city === active ? "#B8743A" : "#A85643"));
+      if (active) {
+        w.controls().autoRotate = false;
+        const c = cities.find(x => x.city === active);
+        if (c) w.pointOfView({ lat: c.lat, lng: c.lng, altitude: 2.2 }, 900);
+      } else {
+        w.controls().autoRotate = true;
+      }
+    } catch (e) {
+      console.error("Globe failed, falling back to flat map:", e);
+      if (onFail) onFail();
     }
   }, [active, cities]);
 
