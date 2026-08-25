@@ -358,7 +358,7 @@ window.CV = {
       { name: "Korea Artificial Intelligence Society Workshop (KrAIS)", count: 2 },
       { name: "DIGI+ Postdoctoral Fellowship", count: 3 },
     ],
-    conferenceTotal: 77,
+    conferenceTotal: 80,
     community: [
       "Mentor, AOM CTO Division Career Mentorship Program",
       "Mentor, AIS SIG DITE Career Mentorship Program",
