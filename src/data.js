@@ -77,7 +77,7 @@ window.CV = {
       id: "invisible",
       authors: "Zhao, Z., Cho, K., Aaltonen, A., & Straub, D.",
       title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration",
-      presented: ["INFORMS 2025", "INFORMS Data Science 2025", "NYU AI Workshop 2025", "Wharton AI and the Future of Work 2025", "DSI 2026"],
+      presented: ["INFORMS 2025", "INFORMS Data Science 2025", "NYU AI Workshop 2025", "Wharton AI and the Future of Work 2025", "GenAI Research Methods 2026", "DSI 2026"],
     },
     {
       id: "vibecoding",
@@ -126,6 +126,7 @@ window.CV = {
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho*", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-10-31", displayDate: "2026-10", venue: "Conference on Information Systems and Technology (CIST 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-10-31", displayDate: "2026-10", venue: "Conference on Information Systems and Technology (CIST 2026)", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy, Cho, Zhao, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-10-01", displayDate: "2026-10", venue: "Conference on Generative AI in Research Methods", title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration", authors: "Zhao, Cho*, Aaltonen, Straub", city: "Atlanta, GA", lat: 33.75, lng: -84.39 },
     { date: "2026-09-09", displayDate: "2026-09", venue: "Wharton Business & Generative AI Conference", title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-06", venue: "Statistical Challenges in eCommerce Research (SCECR 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho*", city: "Tokyo, Japan", lat: 35.68, lng: 139.69 },
     { date: "2026-07-27", displayDate: "2026-07", venue: "Open and User Innovation Conference (OUI 2026)", title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity", authors: "Boussioux*, Zhao, Cho", city: "Boston, MA", lat: 42.36, lng: -71.06 },
