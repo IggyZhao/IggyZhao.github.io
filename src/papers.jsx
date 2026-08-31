@@ -43,7 +43,13 @@ function PapersSection() {
               <h3 className="paper-title">{p.title}</h3>
               <div className="paper-authors">{p.authors}</div>
               <div className="paper-venue">
-                <span className="venue-name">{p.status || p.year}</span>
+                <span className="venue-meta">
+                  {(p.status || p.year) && <span className="venue-name">{p.status || p.year}</span>}
+                  {p.link && (
+                    <a className="paper-link" href={p.link.url} target="_blank" rel="noopener noreferrer"
+                       onClick={(e) => e.stopPropagation()}>{p.link.label} ↗</a>
+                  )}
+                </span>
                 <span className="status">Read details →</span>
               </div>
             </div>
@@ -70,6 +76,14 @@ function PapersSection() {
               <div className="mpresented">
                 <h5>Presented at</h5>
                 <ul>{open.presented.map((v, i) => <li key={i}>{v}</li>)}</ul>
+              </div>
+            )}
+            {open.link && (
+              <div className="mlink">
+                <h5>Project site</h5>
+                <a className="mlink-a" href={open.link.url} target="_blank" rel="noopener noreferrer">
+                  {open.link.label} ↗
+                </a>
               </div>
             )}
           </div>

@@ -78,6 +78,7 @@ window.CV = {
       authors: "Zhao, Z., Cho, K., Aaltonen, A., & Straub, D.",
       title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration",
       presented: ["INFORMS 2025", "INFORMS Data Science 2025", "NYU AI Workshop 2025", "Wharton AI and the Future of Work 2025", "GenAI Research Methods 2026", "DSI 2026"],
+      link: { label: "Making the Screen Computable", url: "https://making-the-screen-computable.vercel.app" },
     },
     {
       id: "vibecoding",
