@@ -80,7 +80,7 @@ function PapersSection() {
             )}
             {open.link && (
               <div className="mlink">
-                <h5>Project site</h5>
+                <h5>Link</h5>
                 <a className="mlink-a" href={open.link.url} target="_blank" rel="noopener noreferrer">
                   {open.link.label} ↗
                 </a>

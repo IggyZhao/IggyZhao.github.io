@@ -78,13 +78,14 @@ window.CV = {
       authors: "Zhao, Z., Cho, K., Aaltonen, A., & Straub, D.",
       title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration",
       presented: ["INFORMS 2025", "INFORMS Data Science 2025", "NYU AI Workshop 2025", "Wharton AI and the Future of Work 2025", "GenAI Research Methods 2026", "DSI 2026"],
-      link: { label: "Making the Screen Computable", url: "https://making-the-screen-computable.vercel.app" },
+      link: { label: "Interactive demo", url: "https://making-the-screen-computable.vercel.app" },
     },
     {
       id: "vibecoding",
       authors: "Boussioux, L., Zhao, Z., Cho, K.",
       title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity",
       presented: ["Wharton AI and the Future of Work 2026", "AOM 2026", "OUI 2026", "Wharton Business & Generative AI 2026", "INFORMS 2026", "DSI 2026"],
+      link: { label: "SSRN preprint", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7323058" },
     },
     {
       id: "generativity",
