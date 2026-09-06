@@ -1,6 +1,6 @@
 // All factual content, no invented taglines.
 window.CV = {
-  updated: "August 2026", // auto-stamped by deploy.sh on every deploy
+  updated: "September 2026", // auto-stamped by deploy.sh on every deploy
   name: "Ziyi Zhao",
   nickname: "Iggy",
   title: "Assistant Professor of Information Systems & Business Analytics",
@@ -344,7 +344,7 @@ window.CV = {
       { name: "Information Technology for Development", count: 49 },
       { name: "Industrial Management & Data Systems", count: 4 },
     ],
-    journalTotal: 81,
+    journalTotal: 82,
     // Ordered by prestige; per-venue counts retained but no longer displayed.
     conferenceReviewer: [
       { name: "International Conference on Information Systems (ICIS)", count: 24 },
@@ -360,9 +360,10 @@ window.CV = {
       { name: "International Conference on Wirtschaftsinformatik (WI)", count: 3 },
       { name: "INFORMS Workshop on Data Science (WDS)", count: 3 },
       { name: "Korea Artificial Intelligence Society Workshop (KrAIS)", count: 2 },
+      { name: "AIS Special Interest Group on Decision Support and Analytics Symposium (SIGDSA)", count: 1 },
       { name: "DIGI+ Postdoctoral Fellowship", count: 3 },
     ],
-    conferenceTotal: 80,
+    conferenceTotal: 81,
     community: [
       "Mentor, AOM CTO Division Career Mentorship Program",
       "Mentor, AIS SIG DITE Career Mentorship Program",
