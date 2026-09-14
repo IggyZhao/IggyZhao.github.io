@@ -75,7 +75,7 @@ window.CV = {
       authors: "Boussioux, L., Zhao, Z., Cho, K.",
       title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity",
       venue: "SSRN",
-      presented: ["Wharton AI and the Future of Work 2026", "AOM 2026", "OUI 2026", "Wharton Business & Generative AI 2026", "INFORMS 2026", "DSI 2026"],
+      presented: ["Wharton AI and the Future of Work 2026", "AOM 2026", "OUI 2026", "INFORMS 2026", "DSI 2026"],
       link: { label: "SSRN preprint", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7323058" },
     },
   ],
@@ -130,7 +130,6 @@ window.CV = {
     { date: "2026-10-31", displayDate: "2026-10", venue: "Conference on Information Systems and Technology (CIST 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-10-31", displayDate: "2026-10", venue: "Conference on Information Systems and Technology (CIST 2026)", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy, Cho, Zhao, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-10-01", displayDate: "2026-10", venue: "Conference on Generative AI in Research Methods", title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration", authors: "Zhao, Cho*, Aaltonen, Straub", city: "Atlanta, GA", lat: 33.75, lng: -84.39 },
-    { date: "2026-09-09", displayDate: "2026-09", venue: "Wharton Business & Generative AI Conference", title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-06", venue: "Statistical Challenges in eCommerce Research (SCECR 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho*", city: "Tokyo, Japan", lat: 35.68, lng: 139.69 },
     { date: "2026-07-27", displayDate: "2026-07", venue: "Open and User Innovation Conference (OUI 2026)", title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity", authors: "Boussioux*, Zhao, Cho", city: "Boston, MA", lat: 42.36, lng: -71.06 },
     { date: "2026-07", venue: "Academy of Management Annual Meeting (AOM 2026)", title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity", authors: "Boussioux, Zhao*, Cho", city: "Philadelphia, PA", lat: 39.95, lng: -75.17 },
@@ -266,7 +265,7 @@ window.CV = {
       "NSF Travel Funding, Grant #2328 (2024) — $1,024",
     ],
     fiu: [
-      "Dean's Office Travel Funding (2026) — $2,000",
+      "Dean's Office Travel Funding (2026) — $4,000",
     ],
     temple: [
       "2nd RAIS Symposium Award (2026) — $2,500",
@@ -371,6 +370,7 @@ window.CV = {
       "Volunteer, ICIS 2021, 2022, 2024",
       "Volunteer, AMCIS 2022",
       "Mentor, ATOM × AIS Technology Innovation 2026 Challenge (FIU)",
+      "Moderator, AI 305",
     ],
   },
 };
