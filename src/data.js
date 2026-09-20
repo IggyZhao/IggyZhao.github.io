@@ -26,7 +26,7 @@ window.CV = {
       id: "decoding",
       authors: "Zhao, Z., Cho, K., Aaltonen, A., & Straub, D.",
       title: "Decoding Coding Advice: Engagement Modes and Coding Outcomes in Programmer-GenAI Collaboration",
-      status: "Under Revision · 3rd Round Review",
+      status: "Under Review · 3rd Round",
       venue: "MIS Quarterly",
       presented: ["INFORMS 2024", "AOM 2024", "IC2S2 2024", "SCECR 2023", "Harvard Business School 2023"],
     },
