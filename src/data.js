@@ -47,6 +47,23 @@ window.CV = {
       presented: ["AMCIS 2025 — Best ERF Paper"],
     },
     {
+      id: "ambient",
+      authors: "Hertelendy, A., Cho, K., Zhao, Z., & Li, J.",
+      title: "The Verification-Urgency Tradeoff: Ambient AI and Active Documentation Time in Emergency Departments",
+      status: "Preparation to Submission",
+      venue: "Information Systems Research",
+      presented: ["WISE 2026", "DSI 2026", "INFORMS 2026", "CIST 2026", "FIU Population Health Initiative 2026"],
+    },
+    {
+      id: "invisible",
+      authors: "Zhao, Z., Cho, K., Aaltonen, A., & Straub, D.",
+      title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration",
+      status: "Preparation to Submission",
+      venue: "MIS Quarterly",
+      presented: ["INFORMS 2025", "INFORMS Data Science 2025", "NYU AI Workshop 2025", "Wharton AI and the Future of Work 2025", "GenAI Research Methods 2026", "DSI 2026"],
+      link: { label: "Interactive demo", url: "https://making-the-screen-computable.vercel.app" },
+    },
+    {
       id: "infocomp",
       authors: "Scheepers, R., Zhao, Z., & Straub, D.",
       title: "Information-Based Competitiveness in the Digital Era: A Theory of Digital Information Asymmetries",
@@ -63,14 +80,6 @@ window.CV = {
       presented: ["AOM 2025", "Advanced Practices Council, SIM 2025"],
     },
     {
-      id: "ambient",
-      authors: "Hertelendy, A., Cho, K., Zhao, Z., & Li, J.",
-      title: "The Verification-Urgency Tradeoff: Ambient AI and Active Documentation Time in Emergency Departments",
-      status: "Preparation to Submission",
-      venue: "Information Systems Research",
-      presented: ["WISE 2026", "DSI 2026", "INFORMS 2026", "CIST 2026", "FIU Population Health Initiative 2026"],
-    },
-    {
       id: "vibecoding",
       authors: "Boussioux, L., Zhao, Z., Cho, K.",
       title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity",
@@ -82,13 +91,6 @@ window.CV = {
   ],
 
   inProgress: [
-    {
-      id: "invisible",
-      authors: "Zhao, Z., Cho, K., Aaltonen, A., & Straub, D.",
-      title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration",
-      presented: ["INFORMS 2025", "INFORMS Data Science 2025", "NYU AI Workshop 2025", "Wharton AI and the Future of Work 2025", "GenAI Research Methods 2026", "DSI 2026"],
-      link: { label: "Interactive demo", url: "https://making-the-screen-computable.vercel.app" },
-    },
     {
       id: "generativity",
       authors: "Boussioux, L., Zhao, Z., Cho, K.",
