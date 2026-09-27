@@ -65,10 +65,10 @@ window.CV = {
     {
       id: "ambient",
       authors: "Hertelendy, A., Cho, K., Zhao, Z., & Li, J.",
-      title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation",
+      title: "The Verification–Urgency Tradeoff: Ambient AI and Active Documentation Time in Emergency Departments",
       status: "Preparation to Submission",
-      venue: "MIS Quarterly",
-      presented: ["DSI 2026", "INFORMS 2026", "CIST 2026", "FIU Population Health Initiative 2026"],
+      venue: "Information Systems Research",
+      presented: ["WISE 2026", "DSI 2026", "INFORMS 2026", "CIST 2026", "FIU Population Health Initiative 2026"],
     },
     {
       id: "vibecoding",
@@ -119,17 +119,18 @@ window.CV = {
 
   // Presentations with geography for the map. Each has its own title.
   presentations: [
+    { date: "2026-12-16", displayDate: "2026-12", venue: "Workshop on Information Systems and Economics (WISE 2026)", title: "The Verification–Urgency Tradeoff: Ambient AI and Active Documentation Time in Emergency Departments", authors: "Hertelendy, Cho*, Zhao, Li", city: "Lisbon, Portugal", lat: 38.72, lng: -9.14 },
     { date: "2026-12", venue: "International Conference on Information Systems (ICIS 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho", city: "Lisbon, Portugal", lat: 38.72, lng: -9.14 },
-    { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy, Cho, Zhao*, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "The Verification–Urgency Tradeoff: Ambient AI and Active Documentation Time in Emergency Departments", authors: "Hertelendy, Cho, Zhao*, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration", authors: "Zhao*, Cho, Aaltonen, Straub", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-21", displayDate: "2026-11", venue: "Decision Sciences Institute Annual Meeting (DSI 2026)", title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
-    { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy*, Cho, Zhao, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "The Verification–Urgency Tradeoff: Ambient AI and Active Documentation Time in Emergency Departments", authors: "Hertelendy*, Cho, Zhao, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "Timing Matters: AI Response Time in Healthcare Decision-Making", authors: "Yang*, Zhao, Cho, Ayabakan", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho*", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-10-31", displayDate: "2026-10", venue: "Conference on Information Systems and Technology (CIST 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
-    { date: "2026-10-31", displayDate: "2026-10", venue: "Conference on Information Systems and Technology (CIST 2026)", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy, Cho, Zhao, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
-    { date: "2026-10-01", displayDate: "2026-10", venue: "2nd Annual FIU Population Health Initiative Conference", title: "When Does Ambient AI Save Time? The Verification Tax in Accountable Clinical Documentation", authors: "Hertelendy, Cho, Zhao*, Li", city: "Miami, FL", lat: 25.76, lng: -80.19 },
+    { date: "2026-10-31", displayDate: "2026-10", venue: "Conference on Information Systems and Technology (CIST 2026)", title: "The Verification–Urgency Tradeoff: Ambient AI and Active Documentation Time in Emergency Departments", authors: "Hertelendy, Cho*, Zhao, Li", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-10-01", displayDate: "2026-10", venue: "2nd Annual FIU Population Health Initiative Conference", title: "The Verification–Urgency Tradeoff: Ambient AI and Active Documentation Time in Emergency Departments", authors: "Hertelendy, Cho, Zhao*, Li", city: "Miami, FL", lat: 25.76, lng: -80.19 },
     { date: "2026-10-01", displayDate: "2026-10", venue: "Conference on Generative AI in Research Methods", title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration", authors: "Zhao, Cho*, Aaltonen, Straub", city: "Atlanta, GA", lat: 33.75, lng: -84.39 },
     { date: "2026-06", venue: "Statistical Challenges in eCommerce Research (SCECR 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho*", city: "Tokyo, Japan", lat: 35.68, lng: 139.69 },
     { date: "2026-07-27", displayDate: "2026-07", venue: "Open and User Innovation Conference (OUI 2026)", title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity", authors: "Boussioux*, Zhao, Cho", city: "Boston, MA", lat: 42.36, lng: -71.06 },
