@@ -54,7 +54,7 @@ function PapersSection() {
         <div className="papers-grid">
           {filtered.map((p, i) => (
             <div key={`${filter}-${p.id||i}`} className={`paper-card ${p.figure ? "has-mark" : ""}`} onClick={() => setOpen(p)}>
-              {p.figure && <OrbitMark/>}
+              {p.figure && <PaperMark id={p.figure}/>}
               <div className={`paper-stamp ${p.kind}`}>
                 <span className="status-dot"/>
                 <span>{statusLabel[p.kind]}</span>
@@ -123,5 +123,21 @@ function PapersSection() {
     </section>
   );
 }
+
+// Figure-eight mark for the cross-platform SDK paper: iOS and Android lobes joined by one codebase.
+function InfinityMark() {
+  const G = "#B8801F";
+  return (
+    <svg className="paper-mark" viewBox="0 0 100 100" aria-hidden="true">
+      <path d="M56.7 50.0 L53.4 41.0 A26.0 26.0 0 1 0 53.4 59.0 L56.7 50.0 L59.2 43.4 A19.0 19.0 0 1 1 59.2 56.6 Z" fill="none" stroke={G} strokeOpacity=".2" strokeWidth="8" strokeLinejoin="round"/>
+      <path d="M56.7 50.0 L53.4 41.0 A26.0 26.0 0 1 0 53.4 59.0 L56.7 50.0 L59.2 43.4 A19.0 19.0 0 1 1 59.2 56.6 Z" fill="none" stroke={G} strokeWidth="2.6" strokeLinejoin="round"/>
+      <rect x="48.7" y="45.5" width="16" height="9" rx="4.5" fill="currentColor"/>
+      <text x="29.0" y="53.2" textAnchor="middle" fontSize="9" fontFamily="IBM Plex Mono, monospace" fill="currentColor">iOS</text>
+      <text x="77.0" y="53.0" textAnchor="middle" fontSize="8" fontFamily="IBM Plex Mono, monospace" fill="currentColor">And</text>
+    </svg>
+  );
+}
+const MARKS = { decoding: OrbitMark, killtwo: InfinityMark };
+function PaperMark({ id }) { const M = MARKS[id]; return M ? <M/> : null; }
 
 Object.assign(window, { PapersSection });

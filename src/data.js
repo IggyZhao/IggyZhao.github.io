@@ -39,6 +39,8 @@ window.CV = {
       status: "Under Review",
       venue: "Management Science",
       presented: ["AOM 2025", "BU PlatStrat 2024", "EU-DPRN 2024", "ICIS 2023", "AMCIS 2023 — Top 25% ERF Paper"],
+      figure: "killtwo",
+      figureUrl: "figures/kill-two-birds/",
     },
     {
       id: "searchas",
