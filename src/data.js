@@ -29,6 +29,8 @@ window.CV = {
       status: "Under Review · 3rd Round",
       venue: "MIS Quarterly",
       presented: ["INFORMS 2024", "AOM 2024", "IC2S2 2024", "SCECR 2023", "Harvard Business School 2023"],
+      figure: "decoding",
+      figureUrl: "figures/decoding-coding-advice/",
     },
     {
       id: "killtwo",

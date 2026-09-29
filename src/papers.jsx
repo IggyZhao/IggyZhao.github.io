@@ -1,6 +1,25 @@
 // Papers grid + modal
 const { useState, useMemo } = React;
 
+// Small orbit mark for papers that have a one-page figure (see src/figures.js).
+// Left half teal = 2023 verification orbit, right half gold = 2026 validation orbit.
+function OrbitMark() {
+  const T = "#1E6B66", G = "#B8801F";
+  return (
+    <svg className="paper-mark" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="17" fill="none" stroke="#9C9488" strokeWidth="1.2" strokeDasharray="2.5 2.5"/>
+      <path d="M50 20 A30 30 0 0 0 50 80" fill="none" stroke={T} strokeWidth="2.6" strokeLinecap="round"/>
+      <path d="M50 20 A30 30 0 0 1 50 80" fill="none" stroke="#B9B3A8" strokeWidth="1"/>
+      <path d="M50 7 A43 43 0 0 0 50 93" fill="none" stroke={G} strokeWidth="1" strokeOpacity=".45" strokeDasharray="1 4"/>
+      <path d="M50 7 A43 43 0 0 1 50 93" fill="none" stroke={G} strokeWidth="2.6" strokeLinecap="round"/>
+      <circle cx="50" cy="7" r="3.2" fill={G}/>
+      <circle cx="50" cy="80" r="3.2" fill={T}/>
+      <circle cx="42" cy="50" r="6.5" fill="currentColor"/>
+      <circle cx="58" cy="50" r="6.5" fill="currentColor"/>
+    </svg>
+  );
+}
+
 function PapersSection() {
   const [filter, setFilter] = useState("all");
   const [open, setOpen] = useState(null);
@@ -34,7 +53,8 @@ function PapersSection() {
 
         <div className="papers-grid">
           {filtered.map((p, i) => (
-            <div key={`${filter}-${p.id||i}`} className="paper-card" onClick={() => setOpen(p)}>
+            <div key={`${filter}-${p.id||i}`} className={`paper-card ${p.figure ? "has-mark" : ""}`} onClick={() => setOpen(p)}>
+              {p.figure && <OrbitMark/>}
               <div className={`paper-stamp ${p.kind}`}>
                 <span className="status-dot"/>
                 <span>{statusLabel[p.kind]}</span>
@@ -59,7 +79,7 @@ function PapersSection() {
 
       <div className={`paper-modal ${open?"open":""}`} onClick={(e) => { if (e.target === e.currentTarget) setOpen(null); }}>
         {open && (
-          <div className="paper-modal-inner">
+          <div className={`paper-modal-inner ${open.figure ? "has-figure" : ""}`}>
             <button className="paper-modal-close" onClick={() => setOpen(null)}>×</button>
             <div className={`paper-stamp ${open.kind}`}>
               <span className="status-dot"/>
@@ -67,6 +87,17 @@ function PapersSection() {
             </div>
             <h3 className="mtitle">{open.title}</h3>
             <div className="mauthors">{open.authors}</div>
+            {open.figure && window.FIGURES && window.FIGURES[open.figure] && (
+              <div className="mfigure">
+                <a className="mfigure-frame" href={open.figureUrl} target="_blank" rel="noopener noreferrer"
+                   title="Open the figure full screen"
+                   dangerouslySetInnerHTML={{__html: window.FIGURES[open.figure]}}/>
+                <div className="mfigure-cap">
+                  <span>One-page summary of the paper</span>
+                  <a href={open.figureUrl} target="_blank" rel="noopener noreferrer">Open full screen ↗</a>
+                </div>
+              </div>
+            )}
             <dl className="mmeta">
               <dt>Venue</dt><dd>{open.venue}</dd>
               {open.status && <><dt>Status</dt><dd>{open.status}</dd></>}

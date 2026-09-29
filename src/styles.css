@@ -1577,3 +1577,31 @@ footer {
   .paper-card { padding: 22px 20px 26px; }
   .paper-title { font-size: 17px; }
 }
+
+/* ========== Paper figure (one-page summary; see src/figures.js) ========== */
+.paper-card.has-mark .paper-stamp, .paper-card.has-mark .paper-title { padding-right: 118px; }
+.paper-mark {
+  position: absolute; top: 46px; right: 26px; width: 104px; height: 104px;
+  z-index: 1; color: var(--ink); pointer-events: none;
+}
+.paper-modal-inner.has-figure { max-width: 1180px; }
+.mfigure { margin: -4px 0 36px; }
+.mfigure-frame {
+  display: block;
+  box-shadow: 0 1px 2px rgba(20,18,16,.08), 0 10px 30px rgba(20,18,16,.12);
+  transition: transform .3s cubic-bezier(.2,.9,.1,1), box-shadow .3s;
+}
+.mfigure-frame:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(20,18,16,.1), 0 18px 44px rgba(20,18,16,.16); }
+.mfigure-frame svg { display: block; width: 100%; height: auto; }
+.mfigure-cap {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  margin-top: 12px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+}
+.mfigure-cap a { color: var(--amber); border-bottom: 1px solid transparent; transition: border-color .2s; }
+.mfigure-cap a:hover { border-bottom-color: var(--amber); }
+@media (max-width: 640px) {
+  .paper-card.has-mark .paper-stamp, .paper-card.has-mark .paper-title { padding-right: 86px; }
+  .paper-mark { top: 40px; right: 20px; width: 76px; height: 76px; }
+  .mfigure { margin-bottom: 24px; }
+}
