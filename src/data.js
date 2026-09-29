@@ -44,6 +44,8 @@ window.CV = {
     },
     {
       id: "searchas",
+      figure: "searchas",
+      figureUrl: "figures/search-as-me/",
       authors: "Zhao, Z., Shan, G., Jung, J., & Wattal, S.",
       title: "Search As Me, With Me, For Me: How AI Search Modalities and Behavioral Visibility Shape Knowledge Work?",
       status: "Under Review",

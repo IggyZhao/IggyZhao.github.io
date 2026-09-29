@@ -137,7 +137,32 @@ function InfinityMark() {
     </svg>
   );
 }
-const MARKS = { decoding: OrbitMark, killtwo: InfinityMark };
+// Delegation-compass mark for the search paper: two diameters (tools available, visibility), threads on the tool spokes.
+function CompassMark() {
+  const T = "#1E6B66", G = "#B8801F", K = "#5B6068";
+  const th = (sx, sy, deg, r0, r1, col, key) => {
+    const a = deg * Math.PI / 180;
+    return <line key={key} x1={50 + sx * r0 * Math.cos(a)} y1={50 + sy * r0 * Math.sin(a)} x2={50 + sx * r1 * Math.cos(a)} y2={50 + sy * r1 * Math.sin(a)} stroke={col} strokeWidth="1.7"/>;
+  };
+  const threads = [
+    // top left: private, three tools, collapsed onto Gemini
+    [-1, -1, 84, 15, 42, G], [-1, -1, 76, 20, 42, G], [-1, -1, 68, 26, 42, G], [-1, -1, 12, 14, 22, K],
+    // top right: visible, three tools, spread
+    [1, -1, 78, 22, 36, G], [1, -1, 48, 14, 40, T], [1, -1, 40, 24, 42, T], [1, -1, 12, 16, 32, K],
+    // bottom: two tools, Google and AI Mode
+    [-1, 1, 14, 14, 34, K], [-1, 1, 42, 20, 42, T], [1, 1, 12, 14, 40, K], [1, 1, 46, 18, 38, T],
+  ];
+  return (
+    <svg className="paper-mark" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" strokeOpacity=".28" strokeWidth="1"/>
+      <line x1="6" y1="50" x2="94" y2="50" stroke="currentColor" strokeOpacity=".28" strokeWidth="1"/>
+      <line x1="50" y1="6" x2="50" y2="94" stroke="currentColor" strokeOpacity=".28" strokeWidth="1"/>
+      {threads.map((t, i) => th(t[0], t[1], t[2], t[3], t[4], t[5], i))}
+      <circle cx="50" cy="50" r="8" fill="currentColor"/>
+    </svg>
+  );
+}
+const MARKS = { decoding: OrbitMark, killtwo: InfinityMark, searchas: CompassMark };
 function PaperMark({ id }) { const M = MARKS[id]; return M ? <M/> : null; }
 
 Object.assign(window, { PapersSection });
