@@ -84,6 +84,7 @@ window.CV = {
       status: "Under Review",
       venue: "MIS Quarterly",
       presented: ["AOM 2025", "Advanced Practices Council, SIM 2025"],
+      link: { label: "AI Opportunity Index", url: "https://aioindex.org" },
     },
     {
       id: "vibecoding",
