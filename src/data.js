@@ -382,7 +382,7 @@ window.CV = {
       "Volunteer, ICIS 2021, 2022, 2024",
       "Volunteer, AMCIS 2022",
       "Mentor, ATOM × AIS Technology Innovation 2026 Challenge (FIU)",
-      "Moderator, AI 305",
+      "Moderator, “AI on the Frontline: Delivering ROI, Reliability and Resilience in Critical Industries” panel, AI 305 Conference",
     ],
   },
 };
