@@ -99,11 +99,21 @@ function Teaching() {
         <h2 className="section-title"><em>Teaching.</em></h2>
       </div>
 
-      <p className="teach-philosophy reveal">
-        I use a <strong>Minimal Variable Product</strong> (MVP) strategy in class to boost curiosity,
-        confidence, and the ability to ask meaningful questions, so students can become the
-        <strong> Most Valuable Player</strong> (MVP) at work.
-      </p>
+      <div className="teach-intro reveal">
+        <p className="teach-philosophy">
+          I use a <strong>Minimal Variable Product</strong> (MVP) strategy in class to boost curiosity,
+          confidence, and the ability to ask meaningful questions, so students can become the
+          <strong> Most Valuable Player</strong> (MVP) at work.
+        </p>
+        <a className="teach-site" href="https://genai-business-studio.vercel.app" target="_blank" rel="noopener">
+          <img src="assets/mvp-studio-preview.jpg" alt="Course arc in three phases: The Builder, The Operator, The Executive" loading="lazy"/>
+          <span className="teach-site-cap">
+            <span className="teach-site-eyebrow">Course website · ISM 4421</span>
+            <span className="teach-site-title">The MVP Studio</span>
+            <span className="teach-site-go">Visit the site ↗</span>
+          </span>
+        </a>
+      </div>
 
       <div className="course-list reveal">
         {window.CV.courses.map((c, i) => (
