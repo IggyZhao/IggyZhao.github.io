@@ -383,9 +383,9 @@ window.CV = {
       "Volunteer, AMCIS 2022",
     ],
     communityFIU: [
-      "Speaker, “AI, Digital Health & Emerging Technologies” roundtable, FIU Population Health Initiative Conference (2026)",
-      "Mentor, ATOM × AIS Technology Innovation 2026 Challenge (FIU)",
+      "Moderator, “AI, Digital Health & Emerging Technologies” roundtable, FIU Population Health Initiative Conference (2026)",
       "Moderator, “AI on the Frontline: Delivering ROI, Reliability and Resilience in Critical Industries” panel, AI 305 Conference",
+      "Mentor, ATOM × AIS Technology Innovation 2026 Challenge (FIU)",
     ],
   },
 };
