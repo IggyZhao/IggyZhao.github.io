@@ -1297,8 +1297,8 @@ section.block { padding: 140px 32px; border-top: 1px solid var(--line); position
   color: var(--muted);
 }
 
-.service-community { list-style: none; padding: 0; margin: 0;
-  columns: 2; column-gap: 60px; }
+.community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.service-community { list-style: none; padding: 0; margin: 0; }
 .service-community li {
   break-inside: avoid;
   font-family: var(--serif); font-size: 17.5px; line-height: 1.5;
@@ -1627,4 +1627,8 @@ footer {
   .paper-card.has-mark .paper-stamp, .paper-card.has-mark .paper-title { padding-right: 86px; }
   .paper-mark { top: 40px; right: 20px; width: 76px; height: 76px; }
   .mfigure { margin-bottom: 24px; }
+}
+
+@media (max-width: 900px) {
+  .community-grid { grid-template-columns: 1fr; gap: 40px; }
 }

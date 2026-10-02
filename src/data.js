@@ -1,6 +1,6 @@
 // All factual content, no invented taglines.
 window.CV = {
-  updated: "September 2026", // auto-stamped by deploy.sh on every deploy
+  updated: "October 2026", // auto-stamped by deploy.sh on every deploy
   name: "Ziyi Zhao",
   nickname: "Iggy",
   title: "Assistant Professor of Information Systems & Business Analytics",
@@ -375,12 +375,15 @@ window.CV = {
       { name: "DIGI+ Postdoctoral Fellowship", count: 3 },
     ],
     conferenceTotal: 81,
-    community: [
+    communityIS: [
       "Mentor, AOM CTO Division Career Mentorship Program",
       "Mentor, AIS SIG DITE Career Mentorship Program",
       "MIS Quarterly Insider Interviewer",
       "Volunteer, ICIS 2021, 2022, 2024",
       "Volunteer, AMCIS 2022",
+    ],
+    communityFIU: [
+      "Speaker, “AI, Digital Health & Emerging Technologies” roundtable, FIU Population Health Initiative Conference (2026)",
       "Mentor, ATOM × AIS Technology Innovation 2026 Challenge (FIU)",
       "Moderator, “AI on the Frontline: Delivering ROI, Reliability and Resilience in Critical Industries” panel, AI 305 Conference",
     ],

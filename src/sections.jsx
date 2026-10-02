@@ -252,10 +252,20 @@ function Service() {
 
       {/* Community footer */}
       <div className="service-section reveal" style={{marginTop:80}}>
-        <div className="ss-label">IS &amp; FIU community</div>
-        <ul className="service-community">
-          {s.community.map((x, i) => <li key={i}>{x}</li>)}
-        </ul>
+        <div className="community-grid">
+          <div>
+            <div className="ss-label">IS community</div>
+            <ul className="service-community">
+              {s.communityIS.map((x, i) => <li key={i}>{x}</li>)}
+            </ul>
+          </div>
+          <div>
+            <div className="ss-label">FIU community</div>
+            <ul className="service-community">
+              {s.communityFIU.map((x, i) => <li key={i}>{x}</li>)}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );
