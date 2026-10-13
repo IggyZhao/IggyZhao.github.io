@@ -254,10 +254,10 @@ window.CV = {
 
   honors: {
     researchHonors: [
+      "Best Paper Nominee, Conference on Information Systems and Technology (CIST 2026)",
       "Outstanding Reviewer Award, AOM CTO Division (2026)",
       "Outstanding Editor, Information Technology for Development, Awarded by AIS (2026)",
       "Junior Faculty Consortium Fellow, AOM CTO Division (2026)",
-      "Best Paper Nominee, Conference on Information Systems and Technology (CIST 2026)",
       "AIS Distinguished Member (2026)",
       "Best ERF Paper Award, AMCIS (2025)",
       "MIS Quarterly Author Development Workshop Selected Attendee (2024)",
