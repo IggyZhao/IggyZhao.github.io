@@ -162,7 +162,28 @@ function CompassMark() {
     </svg>
   );
 }
-const MARKS = { decoding: OrbitMark, killtwo: InfinityMark, searchas: CompassMark };
+// Asymmetry-wheel mark for the DIA paper: four dimension bands, low (gray) to high (gold), DIA at the hub.
+function WheelMark() {
+  const G = "#B8801F", L = "#B9B3A8", T = "#1E6B66";
+  const arc = (r, a0, a1) => {
+    const p = a => [50 + r * Math.sin(a * Math.PI / 180), 50 - r * Math.cos(a * Math.PI / 180)];
+    const [x0, y0] = p(a0), [x1, y1] = p(a1);
+    return `M${x0.toFixed(1)} ${y0.toFixed(1)}A${r} ${r} 0 ${(a1 - a0 + 360) % 360 > 180 ? 1 : 0} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`;
+  };
+  return (
+    <svg className="paper-mark" viewBox="0 0 100 100" aria-hidden="true">
+      <path d={arc(45, 276, 84)} fill="none" stroke="currentColor" strokeOpacity=".35" strokeWidth="1" strokeDasharray="2 2.5"/>
+      {[17, 23, 29, 35].map(r => [
+        <path key={`l${r}`} d={arc(r, 186, 346)} fill="none" stroke={L} strokeWidth="3.4"/>,
+        <path key={`h${r}`} d={arc(r, 14, 174)} fill="none" stroke={G} strokeWidth="3.4"/>,
+      ])}
+      <line x1="4" y1="50" x2="40" y2="50" stroke={T} strokeWidth="1.8"/>
+      <line x1="60" y1="50" x2="96" y2="50" stroke="currentColor" strokeWidth="1.8"/>
+      <circle cx="50" cy="50" r="9" fill="currentColor"/>
+    </svg>
+  );
+}
+const MARKS = { decoding: OrbitMark, killtwo: InfinityMark, searchas: CompassMark, dia: WheelMark };
 function PaperMark({ id }) { const M = MARKS[id]; return M ? <M/> : null; }
 
 Object.assign(window, { PapersSection });

@@ -54,6 +54,8 @@ window.CV = {
     },
     {
       id: "infocomp",
+      figure: "dia",
+      figureUrl: "figures/digital-information-asymmetries/",
       authors: "Scheepers, R., Zhao, Z., & Straub, D.",
       title: "Theorizing Digital Information Asymmetries: How Firms Build Information-Based Competitive Advantage",
       status: "Under Review",
