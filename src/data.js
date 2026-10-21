@@ -72,7 +72,7 @@ window.CV = {
     {
       id: "infocomp",
       authors: "Scheepers, R., Zhao, Z., & Straub, D.",
-      title: "Information-Based Competitiveness in the Digital Era: A Theory of Digital Information Asymmetries",
+      title: "Theorizing Digital Information Asymmetries: How Firms Build Information-Based Competitive Advantage",
       status: "Under Review",
       venue: "Journal of Management Information Systems",
       presented: ["AOM 2025"],
