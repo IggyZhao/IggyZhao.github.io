@@ -48,7 +48,7 @@ window.CV = {
       figureUrl: "figures/search-as-me/",
       authors: "Zhao, Z., Shan, G., Jung, J., & Wattal, S.",
       title: "Search As Me, With Me, For Me: How AI Search Modalities and Behavioral Visibility Shape Knowledge Work?",
-      status: "Under Review",
+      status: "Major Revision",
       venue: "MIS Quarterly",
       presented: ["AMCIS 2025 — Best ERF Paper"],
     },
@@ -59,7 +59,7 @@ window.CV = {
       authors: "Scheepers, R., Zhao, Z., & Straub, D.",
       title: "Theorizing Digital Information Asymmetries: How Firms Build Information-Based Competitive Advantage",
       status: "Under Review",
-      venue: "Journal of Management Information Systems",
+      venue: "Journal of the Association for Information Systems",
       presented: ["AOM 2025"],
     },
     {
