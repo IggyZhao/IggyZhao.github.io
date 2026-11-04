@@ -68,16 +68,7 @@ window.CV = {
       title: "The Verification Tax and the Routinization Dividend: How Ambient AI Scribes Reshape Physician Work",
       status: "Preparation to Submission",
       venue: "Information Systems Research",
-      presented: ["WISE 2026", "DSI 2026", "INFORMS 2026", "CIST 2026", "FIU Population Health Initiative 2026"],
-    },
-    {
-      id: "invisible",
-      authors: "Zhao, Z., Cho, K., Aaltonen, A., & Straub, D.",
-      title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration",
-      status: "Preparation to Submission",
-      venue: "MIS Quarterly",
-      presented: ["INFORMS 2025", "INFORMS Data Science 2025", "NYU AI Workshop 2025", "Wharton AI and the Future of Work 2025", "GenAI Research Methods 2026", "DSI 2026"],
-      link: { label: "Interactive demo", url: "https://making-the-screen-computable.vercel.app" },
+      presented: ["WISE 2026", "DSI 2026", "INFORMS 2026", "CIST 2026 — Best Paper Runner-up", "FIU Population Health Initiative 2026"],
     },
     {
       id: "primingai",
@@ -101,21 +92,36 @@ window.CV = {
 
   inProgress: [
     {
+      id: "invisible",
+      authors: "Zhao, Z., Cho, K., Aaltonen, A., & Straub, D.",
+      title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration",
+      status: "Experiment in Progress",
+      venue: "MIS Quarterly",
+      presented: ["INFORMS 2025", "INFORMS Data Science 2025", "NYU AI Workshop 2025", "Wharton AI and the Future of Work 2025", "GenAI Research Methods 2026", "DSI 2026"],
+      link: { label: "Interactive demo", url: "https://making-the-screen-computable.vercel.app" },
+    },
+    {
       id: "generativity",
       authors: "Boussioux, L., Zhao, Z., Cho, K.",
       title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption",
+      status: "Drafting",
+      venue: "Management Science",
       presented: ["Wharton AI and the Future of Work 2026", "SCECR 2026", "INFORMS 2026", "CIST 2026", "ICIS 2026"],
     },
     {
       id: "timing",
       authors: "Yang, R., Zhao, Z., Cho, K., & Ayabakan, S.",
       title: "Timing Matters: AI Response Time in Healthcare Decision-Making",
+      status: "Experiment in Progress",
+      venue: "Information Systems Research",
       presented: ["ICIS 2025", "CHITA 2026", "INFORMS 2026"],
     },
     {
       id: "skillartifacts",
       authors: "Zhao, Z., Cho, K., & Aaltonen, A.",
       title: "Skills as Artifacts",
+      status: "Conceptualizing",
+      venue: "MIS Quarterly",
     },
   ],
 
@@ -140,7 +146,7 @@ window.CV = {
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "One Tool, One Taste? How Vibe Coding Trades Collective Diversity for Individual Creativity", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "Timing Matters: AI Response Time in Healthcare Decision-Making", authors: "Yang*, Zhao, Cho, Ayabakan", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-11-08", displayDate: "2026-11", venue: "INFORMS Annual Meeting 2026", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho*", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
-    { date: "2026-10-31", displayDate: "2026-10", venue: "Conference on Information Systems and Technology (CIST 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux, Zhao, Cho*", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
+    { date: "2026-10-31", displayDate: "2026-10", venue: "Conference on Information Systems and Technology (CIST 2026)", title: "The Anatomy of a Skill: Triple-Interface Design and the Structural Determinants of Agentic-Artifact Adoption", authors: "Boussioux*, Zhao, Cho", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-10-31", displayDate: "2026-10", venue: "Conference on Information Systems and Technology (CIST 2026)", title: "The Verification Tax and the Routinization Dividend: How Ambient AI Scribes Reshape Physician Work", authors: "Hertelendy, Cho, Zhao, Li*", city: "San Francisco, CA", lat: 37.77, lng: -122.42 },
     { date: "2026-10-01", displayDate: "2026-10", venue: "2nd Annual FIU Population Health Initiative Conference", title: "The Verification Tax and the Routinization Dividend: How Ambient AI Scribes Reshape Physician Work", authors: "Hertelendy, Cho, Zhao*, Li", city: "Miami, FL", lat: 25.76, lng: -80.19 },
     { date: "2026-10-01", displayDate: "2026-10", venue: "Conference on Generative AI in Research Methods", title: "Making the Invisible Visible: Computational Process Tracing of Human-GenAI Collaboration", authors: "Zhao, Cho*, Aaltonen, Straub", city: "Atlanta, GA", lat: 33.75, lng: -84.39 },
@@ -211,7 +217,7 @@ window.CV = {
       level: "MBA",
       role: "Instructor of Record & Course Designer",
       rating: "4.9 / 5.0 (n=36)",
-      term: "Spring 2026",
+      term: "Spring 2026, Fall 2026",
       description: "Designed for the modern decision-maker, this course converts raw business challenges into mature, deployable solutions. MBA students leverage Python and Generative & Agentic AI for fast-track data exploration, automate technical hurdles, and deepen insight generation. Each session features hands-on activities that contribute directly to a ready-to-go business solution, ensuring technical methods remain deeply embedded in business contexts. The focus remains on how analytics informs managerial decision-making, navigates strategic trade-offs, and drives real organizational action.",
     },
     {
@@ -221,7 +227,7 @@ window.CV = {
       level: "Undergraduate",
       role: "Instructor of Record & Course Designer",
       rating: "4.9 / 5.0 (n=40)",
-      term: "Spring 2026",
+      term: "Spring 2026, Fall 2026",
       description: "This class is designed for future business leaders to master Generative & Agentic AI in multi-dimensional business applications. The curriculum includes three stages: The Builder, where students engineer prompt frameworks and use vibe coding tools to build functional prototypes and Generative UIs; The Operator, which focuses on deploying deep research agents, AI solvers, and automation logic to optimize real-world workflows like supply chain, marketing, and human resources; and The Executive, where the focus shifts to governance and strategic ROI. Ultimately, the project is a \"Grand Assembly\"—a fully integrated, functioning AI solution where students merge their weekly modular builds into a cohesive product backed by a professional implementation roadmap.",
     },
     {
@@ -335,6 +341,7 @@ window.CV = {
 
   service: {
     committee: [
+      "Associate Editor, European Conference on Information Systems (ECIS 2027)",
       "Associate Editor, From Generative AI to Agentic IS, WI 2026",
       "Session Chair, AI/ML In Decision Making, DSI Annual Conference 2026",
       "Program Committee, Annual Workshop on Information Technologies and Systems 2026",
