@@ -1,6 +1,6 @@
 // All factual content, no invented taglines.
 window.CV = {
-  updated: "October 2026", // auto-stamped by deploy.sh on every deploy
+  updated: "November 2026", // auto-stamped by deploy.sh on every deploy
   name: "Ziyi Zhao",
   nickname: "Iggy",
   title: "Assistant Professor of Information Systems & Business Analytics",
@@ -38,7 +38,7 @@ window.CV = {
       figureUrl: "figures/search-as-me/",
       authors: "Zhao, Z., Shan, G., Jung, J., & Wattal, S.",
       title: "Search As Me, With Me, For Me: How AI Search Modalities and Behavioral Visibility Shape Knowledge Work?",
-      status: "Major Revision",
+      status: "Under Revision, Second Round",
       venue: "MIS Quarterly",
       presented: ["AMCIS 2025 — Best ERF Paper"],
     },
